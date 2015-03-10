@@ -1,0 +1,35 @@
+\begin{cases}
+m_{t+1}=m_{t}+R(m,t)+C(m,n,t) \\
+n_{t+1}=n_{t}+R(n,t)-C(m,n,t)
+\end{cases}
+
+
+\begin{cases}
+R(m,t)=r_{m}m_{t}\left(\frac{m_{t}}{A_{m}}-1\right)\left(1-\frac{m_{t}}{K_{m}}\right) \\
+R(n,t)=r_{n}n_{t}\left(\frac{n_{t}}{A_{n}}-1\right)\left(1-\frac{m_{t}}{K_{n}}\right)
+\end{cases}
+
+C(m,n,t)=
+\begin{cases}
+0, &\text{if  } R(m,t)=R(n,t) \\
+\zeta(m_t+R(m,t)), &\text{if  } R(m,t)>R(n,t) \\
+-\zeta(n_t+R(n,t)), &\text{if  } R(m,t)<R(n,t) 
+\end{cases}
+
+\zeta=
+\begin{cases}
+z, &\text{if  } |R(m,t)-R(n,t)|>b\Delta \\
+z\frac{|R(m,t)-R(n,t)|}{m\Delta}, &\text{if  } |R(m,t)-R(n,t)|\leq b\Delta
+\end{cases}
+
+\Delta=max\left(r_m\frac{(A_m-K_m)^2}{4A_mK_m},r_n\frac{(A_n-K_n)^2}{4A_nK_n}\right)
+
+g=\frac{\left(\frac{0.5(A_m/K_m+1)}{A_m/K_m}-1\right)\left(1-0.5(A_m/K_m+1)\right)}
+{\left(\frac{0.5(A_n/K_n+1)}{A_n/K_n}-1\right)\left(1-0.5(A_n/K_n+1)\right)}
+
+
+
+\begin{cases}
+R(m,t)=r_{m}m_{t}\left(\frac{m_{t}-c_{An}n_{t}}{A_{m}}-1\right)\left(1-\frac{m_{t}+c_{Kn}n_{t}}{K_{m}}\right) \\
+R(n,t)=r_{n}n_{t}\left(\frac{n_{t}-c_{Am}m_{t}}{A_{n}}-1\right)\left(1-\frac{m_{t}+c_{Km}m_{t}}{K_{n}}\right)
+\end{cases}
