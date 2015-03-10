@@ -1,8 +1,8 @@
 load("./results/data/scenario2.RData")
 
 
-ini.m=0.3090914
-ini.n=0.7921652
+ini.m=0.30769231 
+ini.n=0.8
 z=0
 
 layout(matrix(1:6,3,2,byrow=TRUE))
@@ -46,3 +46,6 @@ axis(side=4,at=c(Km,Kn),labels=c(expression(K[m]),expression(K[n])),hadj=0.5,las
 abline(h=c(Km,Kn),lty=2)
 lines(tmp$n[1:1200],col="royalblue",lwd=2)
 legend("right",legend=c("m","n"),lty=1,lwd=2,col=c("indianred","royalblue"))
+
+
+dev.print(device=pdf,"./results/SimulPastWorkshop110315/fig1.pdf")
