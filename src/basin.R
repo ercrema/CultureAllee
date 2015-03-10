@@ -77,7 +77,7 @@ basinPlot<-function(res,Am=1000,Km=2000,An=1000,Kn=2000,...)
 trajPlot<-function(ini.m=1001,ini.n=1001,...)
     {
         tmp<-allee(ini.m=ini.m,ini.n=ini.n ,...)
-        lines(tmp$m,tmp$n,lty=1,lwd=1)
+        lines(tmp$m,tmp$n,lty=1,lwd=2)
         points(x=ini.m,y=ini.n,pch=20)
     }
 
