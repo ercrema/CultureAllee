@@ -1,6 +1,5 @@
-setwd("~/Google Drive/alleepaper/NewSRC")
-source("./allee.R")
-source("./basin.R")
+source("./src/allee.R")
+source("./src/basin.R")
 
 
 
