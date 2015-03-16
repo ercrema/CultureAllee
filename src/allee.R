@@ -1,5 +1,5 @@
 
-allee<-function(r.n=0.005,r.m=0.005,ini.m=1001,ini.n=1001,Am=1000,Km=2000,An=1000,Kn=2000,z=0.7,timeSteps=2000,b=2,storeFinalOnly=FALSE,cAm=0,cAn=0,cKn=0,cKm=0)
+allee<-function(r.n=0.005,r.m=0.005,ini.m=0.6,ini.n=0.8,Am=0.2,Km=0.7,An=0.5,Kn=1,z=0,timeSteps=2000,b=2,storeFinalOnly=FALSE,cAm=-0.2,cAn=0.2,cKn=0.2,cKm=-0.2)
 {
 # Create Output Vectors:
     m<-numeric(length=timeSteps)
