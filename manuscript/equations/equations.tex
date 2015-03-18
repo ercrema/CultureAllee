@@ -1,35 +1,74 @@
+%Equation 1:
+
 \begin{cases}
-m_{t+1}=m_{t}+R(m,t)+C(m,n,t) \\
-n_{t+1}=n_{t}+R(n,t)-C(m,n,t)
+m_{t+1}=m_{t}+m_{t}R_{m,t}+C_{m,n,t} \\
+n_{t+1}=n_{t}+n_{t}R_{n,t}-C_{m,n,t}
 \end{cases}
 
 
+%Equation 2:
+
 \begin{cases}
-R(m,t)=r_{m}m_{t}\left(\frac{m_{t}}{A_{m}}-1\right)\left(1-\frac{m_{t}}{K_{m}}\right) \\
-R(n,t)=r_{n}n_{t}\left(\frac{n_{t}}{A_{n}}-1\right)\left(1-\frac{m_{t}}{K_{n}}\right)
+R_{m,t}=r_{m}\left(\frac{m_{t}}{A_{m}}-1\right)\left(1-\frac{m_{t}}{K_{m}}\right) \\
+R_{n,t}=r_{n}\left(\frac{n_{t}}{A_{n}}-1\right)\left(1-\frac{m_{t}}{K_{n}}\right)
 \end{cases}
 
-C(m,n,t)=
+%Equation 3:
+C_{m,n,t}=
 \begin{cases}
-0, &\text{if  } R(m,t)=R(n,t) \\
-\zeta(m_t+R(m,t)), &\text{if  } R(m,t)>R(n,t) \\
--\zeta(n_t+R(n,t)), &\text{if  } R(m,t)<R(n,t) 
+0, &\text{if  } R_{m,t}=R_{n,t} \\
+\zeta(m_t+m_tR_{m,t}), &\text{if  } R_{m,t}>R_{n,t} \\
+-\zeta(n_t+n_tR_{n,t}), &\text{if  } R_{m,t}<R_{n,t} 
 \end{cases}
 
+%Equation 4:
 \zeta=
 \begin{cases}
-z, &\text{if  } |R(m,t)-R(n,t)|>b\Delta \\
-z\frac{|R(m,t)-R(n,t)|}{m\Delta}, &\text{if  } |R(m,t)-R(n,t)|\leq b\Delta
+z, &\text{if  } |R_{m,t}-R_{n,t}|>b\Delta \\
+z\frac{|R_{m,t}-R_{n,t}|}{b\Delta}, &\text{if  } |R_{m,t}-R_{n,t}|\leq b\Delta
 \end{cases}
 
+%Equation 5:
 \Delta=max\left(r_m\frac{(A_m-K_m)^2}{4A_mK_m},r_n\frac{(A_n-K_n)^2}{4A_nK_n}\right)
 
+%Equation 6:
 g=\frac{\left(\frac{0.5(A_m/K_m+1)}{A_m/K_m}-1\right)\left(1-0.5(A_m/K_m+1)\right)}
 {\left(\frac{0.5(A_n/K_n+1)}{A_n/K_n}-1\right)\left(1-0.5(A_n/K_n+1)\right)}
 
 
-
+%Equation A1:
 \begin{cases}
-R(m,t)=r_{m}m_{t}\left(\frac{m_{t}-c_{An}n_{t}}{A_{m}}-1\right)\left(1-\frac{m_{t}+c_{Kn}n_{t}}{K_{m}}\right) \\
-R(n,t)=r_{n}n_{t}\left(\frac{n_{t}-c_{Am}m_{t}}{A_{n}}-1\right)\left(1-\frac{m_{t}+c_{Km}m_{t}}{K_{n}}\right)
+R_{m,t,c}=r_{m}\left(\frac{m_{t}-c_{An}n_{t}}{A_{m}}-1\right)\left(1-\frac{m_{t}+c_{Kn}n_{t}}{K_{m}}\right) \\
+R_{n,t,c}=r_{n}\left(\frac{n_{t}-c_{Am}m_{t}}{A_{n}}-1\right)\left(1-\frac{m_{t}+c_{Km}m_{t}}{K_{n}}\right)
+\end{cases}
+
+%Alternative with single competition component (A1b)
+\begin{cases}
+R_{m,t,c}=r_{m}\left(\frac{m_{t}-cn_{t}}{A_{m}}-1\right)\left(1-\frac{m_{t}+cn_{t}}{K_{m}}\right) \\
+R_{n,t,c}=r_{n}\left(\frac{n_{t}+cm_{t}}{A_{n}}-1\right)\left(1-\frac{m_{t}-cm_{t}}{K_{n}}\right)
+\end{cases}
+
+%Equations A2: Stable Node Equilibria (version 1)
+\begin{cases}
+         m=\frac{K_m-c_{Kn}K_n}{1-c_{Kn}c_{Km}}\\
+         n=\frac{c_{Km}K_m-K_n}{c_{Km}c_{Kn}-1}
+\end{cases}
+
+%Equations A2: Stable Node Equilibria (version 2, equal coefficient components)
+\begin{cases}
+         m=\frac{K_m-cK_n}{c^2+1}\\
+         n=\frac{cK_m+K_n}{c^2+1}
+\end{cases}
+
+
+%Equations A3: Unstable Node Equilibria (version 1)
+\begin{cases}
+         m=\frac{c_{An}A_n+A_m}{1-c_{An}c_{Am}}\\
+         n=\frac{c_{Am}A_m+An}{1-c_{An}c_{Am}}
+\end{cases}
+
+%Equations A3: Unstable Node Equilibria  (version 2, equal coefficient components)
+\begin{cases}
+         m=\frac{cA_n+A_m}{c^2+1}\\
+         n=\frac{An-cA_m}{c^2+1}
 \end{cases}
