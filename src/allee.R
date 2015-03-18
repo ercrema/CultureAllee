@@ -14,23 +14,26 @@ for (t in 2:timeSteps)
     {
 
      #intrinsic growth rates
-     Rm=r.m*m[t-1]*((m[t-1]-cAn*n[t-1])/Am-1)*(1-(m[t-1]+cKn*n[t-1])/Km)
-     Rn=r.n*n[t-1]*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)
+     Rm=r.m*((m[t-1]-cAn*n[t-1])/Am-1)*(1-(m[t-1]+cKn*n[t-1])/Km)
+     Rn=r.n*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)
 
+
+
+     
 #transmission rates
      if (abs(Rm-Rn)>=(b*DELTA)) {zeta=z}
      if (abs(Rm-Rn)<(b*DELTA)) {zeta=z*abs(Rm-Rn)/(b*DELTA)}
 
 #switch function
      if (Rm==Rn) {C=0} #No transmission
-     if(Rm>Rn) {C=zeta*(n[t-1]+ Rn)} # The proportion moving is a function of the updated population size
-     if (Rn>Rm) {C=-zeta*(m[t-1]+ Rm)} # The proportion moving is a function of the updated population size
+     if(Rm>Rn) {C=zeta*(n[t-1]+ Rn*n[t-1])} # The proportion moving is a function of the updated population size
+     if (Rn>Rm) {C=-zeta*(m[t-1]+ Rm*m[t-1])} # The proportion moving is a function of the updated population size
                  
 #transmission(migration)
 # This is essentially population of the previous steps + population increasing through reproduction, and population moving after transmission (post-reproduction).      
      
-     m[t]=m[t-1]+ Rm + C
-     n[t]=n[t-1]+ Rn - C
+     m[t]=m[t-1]+ Rm*m[t-1] + C
+     n[t]=n[t-1]+ Rn*n[t-1] - C
 
  }
     if (storeFinalOnly==FALSE)
