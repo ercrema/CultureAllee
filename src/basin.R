@@ -42,14 +42,19 @@ if (multicore==FALSE)
 return(res)
 }
 
-basinPlot<-function(res,Am=1000,Km=2000,An=1000,Kn=2000,...)
+basinPlot<-function(res,Am=1000,Km=2000,An=1000,Kn=2000,cKn,cKm)
     {
         require(raster)
-      
-        #deal with floating point arithmethic problem#
+
+        #Identify Stable Attractor Node
+        Em=ExpStableNode(Kn,Km,cKn,cKm)$m
+        En=ExpStableNode(Kn,Km,cKn,cKm)$n
         
-        res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=Km,USE.NAMES=F,simplify=TRUE)))]=Km
-        res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=Kn,USE.NAMES=F,simplify=TRUE)))]=Kn
+        #deal with floating point arithmethic problem#
+
+        
+        res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=Km,USE.NAMES=F,simplify=TRUE)))]=Em
+        res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=Kn,USE.NAMES=F,simplify=TRUE)))]=En
         res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=0,USE.NAMES=F,simplify=TRUE)))]=0
         res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=0,USE.NAMES=F,simplify=TRUE)))]=0
 
@@ -59,14 +64,14 @@ basinPlot<-function(res,Am=1000,Km=2000,An=1000,Kn=2000,...)
         #Limit Cycle Colour
         res$col=1
         # E1: Coexistence
-        res$col[which(res$m.final==Km&res$n.final==Kn)]=2
+        res$col[which(res$m.final==Em&res$n.final==En)]=2
 
 
         # E2m: Dominance m
         res$col[which(res$m.final==Km&res$n.final==0)]=3   
         # E2n: Dominance n
         res$col[which(res$m.final==0&res$n.final==Kn)]=4      
-        # E3: Extinction n
+        # E3: Extinction 
         res$col[which(res$m.final==0&res$n.final==0)]=5  
         #plot(res[,1],res[,2],col=res$col,x.lab="m",y.lab="n",pch=15)
         tmp=rasterFromXYZ(res[,c(1,2,5)])
