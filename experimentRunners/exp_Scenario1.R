@@ -1,5 +1,6 @@
-source("./allee.R")
-source("./basin.R")
+source("./src/allee.R")
+source("./src/basin.R")
+source("./src/utility.R")
 
 #Scenario 1
 
