@@ -13,9 +13,9 @@ ExpStableNode=function(Kn,Km,cKn,cKm)
 
 ExpUnStableNode=function(An,Am,cAn,cAm)
     {
-         m=(cKn*An+Am)/(1-cAn*cAm)
-         n=(cKm*Am+An)/(1-cAn*cAm)
-         return(list(m=mExp,n=nExp))
+         m=(cAn*An+Am)/(1-cAn*cAm)
+         n=(cAm*Am+An)/(1-cAn*cAm)
+         return(list(m=m,n=n))
     }
 
 
