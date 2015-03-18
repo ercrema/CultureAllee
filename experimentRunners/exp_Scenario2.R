@@ -1,5 +1,6 @@
-source("./allee.R")
-source("./basin.R")
+source("./src/allee.R")
+source("./src/basin.R")
+source("./src/utility.R")
 
 #Scenario 2
 
@@ -9,7 +10,7 @@ An=0.5
 Am=0.2
 z=0
 r.n=0.005
-r.m=0.005
+r.m=EqualiseMaxGrowthRate(An=An,Am=Am,Kn=Kn,Km=Km)*r.n
 x.lim=c(0,1.2)
 y.lim=c(0,1.2)
 cAn=0

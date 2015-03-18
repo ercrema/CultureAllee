@@ -9,7 +9,7 @@ An=0.2
 Am=0.5
 z=0
 r.n=0.005
-r.m=0.005
+r.m=EqualiseMaxGrowthRate(An=An,Am=Am,Kn=Kn,Km=Km)*r.n
 x.lim=c(0,1.2)
 y.lim=c(0,1.2)
 cAn=0
