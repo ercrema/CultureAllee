@@ -42,7 +42,7 @@ if (multicore==FALSE)
 return(res)
 }
 
-basinPlot<-function(res,Am=1000,Km=2000,An=1000,Kn=2000,cKn,cKm)
+basinPlot<-function(res,Am=1000,Km=2000,An=1000,Kn=2000,cKn,cKm,...)
     {
         require(raster)
 
@@ -53,8 +53,10 @@ basinPlot<-function(res,Am=1000,Km=2000,An=1000,Kn=2000,cKn,cKm)
         #deal with floating point arithmethic problem#
 
         
-        res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=Km,USE.NAMES=F,simplify=TRUE)))]=Em
-        res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=Kn,USE.NAMES=F,simplify=TRUE)))]=En
+        res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=Km,USE.NAMES=F,simplify=TRUE)))]=Km
+        res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=Kn,USE.NAMES=F,simplify=TRUE)))]=Kn
+        res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=Em,USE.NAMES=F,simplify=TRUE)))]=Em
+        res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=En,USE.NAMES=F,simplify=TRUE)))]=En
         res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=0,USE.NAMES=F,simplify=TRUE)))]=0
         res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=0,USE.NAMES=F,simplify=TRUE)))]=0
 
@@ -86,7 +88,15 @@ trajPlot<-function(ini.m=1001,ini.n=1001,...)
         points(x=ini.m,y=ini.n,pch=20)
     }
 
-
+basePlot<-function(...)
+    {
+        tmp=allee(...)
+        plot(tmp$m,type="l",ylim=c(0,1),col="indianred",lwd=2,ylab="Population Size",xlab="Time")
+        axis(side=4,at=c(Km,Kn),labels=c(expression(K[m]),expression(K[n])),hadj=0.5,las=2)
+        abline(h=c(Km,Kn),lty=2)
+        lines(tmp$n,col="royalblue",lwd=2)
+        legend("right",legend=c("m","n"),lty=1,lwd=2,col=c("indianred","royalblue"))
+    }
 
 
 
