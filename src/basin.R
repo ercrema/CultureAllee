@@ -1,48 +1,49 @@
-basin<-function(x.lim,y.lim,points,multicore=TRUE,r.n=0.005,r.m=0.005,Am=1000,Km=2000,An=1000,Kn=2000,z=0.7,timeSteps=2000,b=2,cores=1,cAn=0,cAm=0,cKn=0,cKm=0,verbose=TRUE)
+basin<-function(x.lim,y.lim,points,multicore=TRUE,r.n,r.m,Am,Km,An,Kn,z,timeSteps,b=2,cores=1,cAn,cAm,cKn,cKm,verbose=TRUE)
 {
     require(utils)
     require(foreach)
     require(doParallel)
 
-x <- seq(from = x.lim[1], to = x.lim[2], length = points)
-y <- seq(from = y.lim[1], to = y.lim[2], length = points)
-coordgrid=expand.grid(x,y)
-res=data.frame(ini.m=coordgrid[,1],ini.n=coordgrid[,2],m.final=NA,n.final=NA)
+    x <- seq(from = x.lim[1], to = x.lim[2], length = points)
+    y <- seq(from = y.lim[1], to = y.lim[2], length = points)
+    coordgrid=expand.grid(x,y)
+    res=data.frame(ini.m=coordgrid[,1],ini.n=coordgrid[,2],m.final=NA,n.final=NA)
+    
     if (verbose==TRUE)
         {pb <- txtProgressBar(min = 1, max = nrow(res), style=3)}
 
-if (multicore==TRUE)
-    {
-        registerDoParallel(cores=cores)
-        tmp=foreach(i=1:nrow(res), .combine=rbind) %dopar%
+    if (multicore==TRUE)
         {
-            if (verbose==TRUE) {setTxtProgressBar(pb, i)}
-            allee(ini.n=res$ini.n[i],ini.m=res$ini.m[i],
-               r.n=r.n,r.m=r.m,Am=Am,Km=Km,An=An,Kn=Kn,
-                  z=z,timeSteps=timeSteps,b=b,
-                  cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,
-                  storeFinalOnly=TRUE)}
-        res[,3:4]=tmp
-    }
-
-if (multicore==FALSE)
-    {
-        for (i in 1:nrow(res))
+            registerDoParallel(cores=cores)
+            tmp=foreach(i=1:nrow(res), .combine=rbind) %dopar%
             {
-            if (verbose==TRUE) {setTxtProgressBar(pb, i)}
-             res[i,3:4]= allee(ini.n=res$ini.n[i],ini.m=res$ini.m[i],
-               r.n=r.n,r.m=r.m,Am=Am,Km=Km,An=An,Kn=Kn,
-                  z=z,timeSteps=timeSteps,b=b,
-                  cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,
-                  storeFinalOnly=TRUE)
-            }
-    }
-            if (verbose==TRUE) {close(pb)}
+                if (verbose==TRUE) {setTxtProgressBar(pb, i)}
+                allee(ini.n=res$ini.n[i],ini.m=res$ini.m[i],
+                      r.n=r.n,r.m=r.m,Am=Am,Km=Km,An=An,Kn=Kn,
+                      z=z,timeSteps=timeSteps,b=b,
+                      cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,
+                      storeFinalOnly=TRUE)}
+            res[,3:4]=tmp
+        }
+
+    if (multicore==FALSE)
+        {
+            for (i in 1:nrow(res))
+                {
+                    if (verbose==TRUE) {setTxtProgressBar(pb, i)}
+                    res[i,3:4]= allee(ini.n=res$ini.n[i],ini.m=res$ini.m[i],
+                           r.n=r.n,r.m=r.m,Am=Am,Km=Km,An=An,Kn=Kn,
+                           z=z,timeSteps=timeSteps,b=b,
+                           cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,
+                           storeFinalOnly=TRUE)
+                }
+        }
+    if (verbose==TRUE) {close(pb)}
     
-return(res)
+    return(res)
 }
 
-basinPlot<-function(res,Am=1000,Km=2000,An=1000,Kn=2000,cKn,cKm,...)
+basinPlot<-function(res,Am,Km,An,Kn,cKn,cKm,...)
     {
         require(raster)
 
