@@ -1,0 +1,137 @@
+
+\documentclass[preprint,authoryear]{elsarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+
+\newcommand{\memo}[2]{\textcolor{#1}{#2}}
+\newcommand{\xavi}[1]{\memo{orange}{xavi: #1\\}}
+\newcommand{\enrico}[1]{\memo{blue}{enrico: #1\\}}
+
+\journal{Evolution and Human Behavior}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Allee Effect and Cultural Evolution}
+
+\author[label1]{Enrico R. Crema\corref{cor1}}
+\cortext[cor1]{Enrico R. Crema, enrico.crema@upf.edu}
+\author[label2]{Xavier Rubio-Campillo}
+
+\address[label1]{CaSEs - Complexity and Socio-Ecological Dynamics Research Group, Barcelona}
+\address[label2]{BSC - Barcelona Supercomputing Center}
+\begin{abstract}
+Social learning often relies on the evaluation of the fitness of cultural traits through a comparative assessment of alternatives observed in a population. This process is shaped by the details of the learning strategy, as well as the context where the trait is displayed. The latter can modify the fitness of the cultural trait, ultimately changing the evolutionary fate of each adoption or loss. Here we explore a particular situation where the fitness of a trait is dependent to its frequency in the population.  We argue that many cultural traits pertaining subsistence activities exhibit both positive and negative frequency selection, derived by the beneficial effect of cooperation and the detrimental role played by interference and limited resources. A too small or too large population of individuals possessing the same variant will be subject to a decline in fitness, while an intermediate size will be optimal. We explore this core assumption, which closely resembles the “Allee effect” in ecology, using a modified Lotka-Volterra model of payoff-biased social learning, and show that this can generate a large variety of evolutionary dynamics observed in socially transmitted subsistence traits,  including episodes of reversion to suboptimal variants, long-term co-existence of multiple variants, and fixation to a single optimal or suboptimal strategy.
+\end{abstract}
+
+\begin{keyword}
+Social Learning\sep Subsistence\sep Allee Effect\sep Cooperation\sep Carrying Capacity
+\end{keyword}
+
+\end{frontmatter}
+
+\section{Introduction}
+
+Major transitions in human history have been often marked by the fast spread of key innovations, which subsequently acted as catalysts for further changes in economy, society, and culture. Shifts in subsistence economy has often been regarded as a prime example of these transitions, and archaeologists and anthropologists have long focused on historical process behind these events (van der Veen 2010?). Key innovations such as the know-how of the domestication process \citep{barker2006}; the use of new subsistence tools\footnote{citation needed}; the adoption of processing techniques \citep{molleson1993}; the inclusion/exclusion and extensification/intensification of prey species\footnote{citation needed} are indeed often regarded as milestones in the human evolutionary history. Yet the archaeological record denies a simple progressive model of adoption. Instead, evidence showcase a variety of trajectories, including the long-term coexistence of multiple subsistence strategies, or even reversions to older cultural variants \citep{rowley2001}.
+
+Formal models portraying changes in human subsistence have been mostly offered in human behavioral ecology (Smith and Winterhalder 1992, Bird and O'Connell 2006, Kennet and Winterhalder 2006), where several mathematical models inspired from evolutionary ecology offered precise prediction based on expected patterns under the assumption of optimality (Belovsky 1988)\footnote{citation needed}. While earliest models relied almost exclusively on this assumption, most recent works are increasing discussing how the knowledge of alternative subsistence strategies are acquired, and whether this process of learning can drive the evolutionary trajectory of a given population (Henrich and Boyd, 1998), partly as a synergy with the dual inheritance theory (Boyd and Richerson 1985). 
+
+The results of these works often exhibits counter-intuitive outcomes that cannot be predicted by standard assumptions of optimality. For instance, extreme reliance on social learning can promote information parasitism (Giraldeau et al 2002), leading to a decline in the proportion of asocial learners that in certain environmental context can have strongly detrimental effects at the population level (Whitehead and Richerson 2009). Other examples include instances where a reduced effective population size promotes an increase in random drift, and the ultimate loss of adaptive traits (Henrich 2004), or instances where neutral traits are jointly transmitted together with adaptive ones (Ackland et al 2007). These examples illustrate how theoretical models based on the dual inheritance theory can extend predictions of the standard optimal foraging theory, integrating dynamics that, at least at a first glance,  are regarded as counter-intuitive. These include episodes of reversions (e.g. \footnote{citation needed}), where a more recent optimal strategies are abandoned for older suboptimal variants; stable coexistence (e.g. \footnote{citation needed}), where optimal and suboptimal strategies co-exist within a population; and even the complete loss of optimal variants (e.g. Henrich 2004). The evolutionary processes leading to these different outcomes are undoubtedly contingent to local historical dynamics, nonetheless we argue that a simple model of social learning in combination with a positive and negative frequency dependent selection can lead all these equilibria.
+
+\section{Payoff-biased Learning and Allee Effect}
+
+A key feature that underlies many models of cultural transmission is that the social learner is often guided by some form of evaluation of characteristics associated with potential teachers or demonstrators. To put it simply, one can decide to copy traits possessed by individuals showing some signal that suggests higher payoff, success, or fitness (e.g. number of offspring, income, presence/absence of key traits, etc.). This learning strategy has been broadly referred to as directed social learning (Coussi-Korbel and Fragaszy 1995), model-biased transmission (Boyd and Richerson 1985, Henrich and Gil-White 2001), attraction model (Acerbi and Bentley 2014), and payoff-based transmission\footnote{citation needed}. The exact details of these model differ to some extent, as some might imply that the target trait of interest and the observed payoff-signal is only weakly correlated (e.g. prestige biased transmission), while other entails a more direct link between the two. In one sense one can argue that they are part of a broader category of social learning strategy (see also Crema and Lake, under review).  
+
+The degree of correlation between the payoff-signal and the target trait can also be viewed as a form of uncertainty or amount of information content offered by the signal. Previous studies (Schlag 1998,1999; Baldini 2013, Lake and Crema 2012) have explored how different learning strategies (e.g. copy-the-best, or copy-the-best-average, or copy-proportionally) show different dynamics, and are differently biased by this uncertainty. In some cases these might produce counter-intuitive outcomes. For instance, Baldini (2013) has shown that when the learning strategy is  copy-the-best suboptimal variants with higher payoff uncertainty and lower mean (equivalent to a lower correlation between signal payoff-signal and the target trait) can be favored over variants with higher mean and lower uncertainty. In other contexts, the uncertainty might be in the identification of the correct target trait, which could lead to the adoption of variants that have minimal or no correlation with the observed cue (cf. “evolutionary hitchhiking”,  Ackland et al 2007). 
+
+The uncertainty of the payoff signal is partly derived by the presence of interacting cultural and physical traits, as well as the environment where the trait is manifest. For example, a hunter might evaluate the performance of an arrowhead type (the target cultural trait) using as a cue the number of preys captured (the payoff signal). The correlation between the two is partly due to the efficiency of the arrowhead, but also by the bow, the prey species being capture and their availability,  the physical properties of the hunter, and chance. In many cases we should expect that the social teacher and learner share many of these interacting traits as well as the environment where these are displayed. In other words, cultural and ecological inheritance can generally reduce the uncertainty of the payoff-signal. There are however exceptions. One of these are contexts where the success of a variant is strongly correlated with the number of individuals possessing it within a population. This density dependence implies the adoption (or abandonment) of a trait by any individual can alter the expected fitness, and hence the payoff-signal, of all individuals within the population. 
+
+Several cultural traits are expected to show such density dependence. For example, behavior linked to the exploitation or consumption of limited resources are expected to exhibit a negative frequency dependence.  Novel optimal variants are likely to spread rapidly when the trait is rare, but once a threshold frequency is exceeded,  beneficial effect will start to decline,  the payoff will become smaller,  and eventually rarer suboptimal variants can be preferred (see Lake and Crema 2012 for an extensive analysis).  Negative dependency is however not the only form frequency dependence we should expect. In some cases, cultural variants that are strongly based on direct or indirect cooperation might require a minimum frequency to provide sufficient fitness, or more broadly show a positive correlation with the number of individuals possessing the trait. This positive frequency dependence, known in ecology as Allee Effect \citep{allee1958}, can be expected at different meta-population levels.  For example foraging groups are known to show higher performance when the number of individuals is not too small (Smith 1981), while certain activity such as anthropogenic fire (Bird et al 2013) or selective hunting (Dods 2002) might require a sufficient population density to promote sufficient niche enhancement and a consequent increase in payoff (Rowley-Conwy 2011). More\footnote{citation needed!} Language? Bettencourt Cities? \enrico{Ideally we need more example, not necessarily within the domain of subsistence activities. Any Allee Effect? Add Ostrom 2000 mention collective good problems here}.
+
+Here we explore the combination of frequency dependent selection and payoff-based transmission with a modified version of the Lotka-Volterra model. We will demonstrate that degree by which a population relies on social learning can strongly affect the long-term equilibria of the system, with changes in the size of basins of different basins of attraction. Section 2 will illustrate our model, section 3 will explore three different scenarios, and section 4 will discuss our results and their broader implication. 
+
+[RESULTS HERE...]
+
+\section{The Model}
+We consider the evolutionary dynamics of two mutually exclusive subsistence strategies which fitness have both positive and negative frequency dependence. In particular we examine how two population of individuals, m and n, change over time if we allow for a social learning strategy guided by the difference in the fitness of the individuals. The model can theoretically be extended to more than two strategies, but here we decide to explore a two trait version for simplicity. The core model can be depicted with the following coupled difference equation:
+
+\xavi{equation1}
+
+where the population of each trait at time t+1 is the given by the number of individuals during the previous time-step (mt and nt), the number of offspring generated by each population (R(m,t) and R(n,t)) and the number of individuals shifting from one strategy to the other (C(m,n,t)).
+
+The intrinsic growth rate of each population can be obtained from the following paired equation:
+
+\xavi{equation2}
+
+where r is the basic growth rate, A is the allee threshold, and K is the carrying capacity, with A<K.  The intrinsic growth rate will thus become negative when the population size is below A or above K, and will reach its maximum value Rmax at (K-A)/2, with Rmax equivalent to r(A-K)2/4AK. 
+
+Cultural transmission is portrayed here as a migration from the population with lower payoff to the population with higher payoff:
+
+\xavi{equation3}
+
+where delta defines the proportion of individuals shifting strategy. This is given by the following equation:
+
+\xavi{equation4}
+
+where z is the maximum transmission rate (i.e. the highest proportion of individuals shifting strategy), DELTA XX is the maximum between Rmax(m,t) and Rmax(n,t) , and b is a calibration parameter that measure the perception of the difference in the payoffs (i.e. small values of b determines a higher rate by which the theoretical maximum transmission rate is reached).
+
+\section{Experiments}
+
+We investigate different initial conditions of m and n for 6 different values of z (0,0.05,0.1,0.2,0.3, and 0.5). For each parameter combination we apply equations 1~4 for 50,000 iterations and record the final values of m and n, identifying the following equilibria
+
+\enrico{We might need to use a rounding factor. And in fact these introduces to the problem of scale and difference between discrete and continuos  models.}
+\enrico{We can analytical solve equations 1~4 to shows that the E1, E2 and E3 are indeed equilibria. Perhaps in an appendix? (although this is quite obvious...)}
+
+We are aware that condition U can potentially become one of the other stable equilibria after the 50,000 simulations, hence we computed the Lyapunov exponent to define the stability of the system. We devised three core scenarios reflecting fixing b=2 and equating Rn to gRm, where g is given by the following equation:
+
+\xavi{equation5}
+
+so that when Rn=gRm,  Rmax(m,t) and Rmax(n,t) becomes equal. In all scenarios we considered Allee thresholds and carrying capacities as proportions by ensuring that max(Km,Kn)=1.
+
+\enrico{Justify choice of arbitrary values}
+
+\subsection{Scenario 1: Traits with identical payoffs (i.e. Am = An   and Km=Kn)}
+
+The first scenario assumes two traits that are mathematically equivalent, so that  Am = An
+, Km=Kn and rm=rn. Figure 1 shows the basin of attractions of each of the four equilibria for different values of z, setting r=0.005, .A=0.2 and K=1. When the z=0, i.e. when cultural transmission is disabled we have straight boundaries between the basins of E1, E2m, E2n, and E3 defined by Allee threshold. In other words when both one or both the population are below A we have some extinction events (E3 when mt=0<Am and nt=0<An, E2m when mt=0>Am and nt=0<An and E3n when mt=0<Am and nt=0>An). When z>0, the boundaries of these basins changes and with high z we see the emergence of unstable equilibria (U). 
+
+
+In all cases the E1 equilibria is maintained when $mt=0=nt=0 > Am=An$ as in this scenario differences arises only when m DIFFERENT OF n, and when the two populations are equally sized, C(m,n) is equal to 0 (see equation [3]).  
+
+\subsection{Scenario 2: Overlapping payoffs (i.e.  Am <  An  < Km < Kn)}
+
+Am=0.2, An=0.5, Km=0.7,Kn=1
+
+\subsection{Scenario 3: Internal overlap  (i.e.  Am <  An < Kn <  Km )}
+
+An=0.2, Am=0.5, Km=0.7,Kn=1
+
+\subsection{A note on competition}
+
+The model described in equations [1]~[4] assumes that the resource pool of the two strategy are completely independent to each other. In reality many strategies have some degree of competition, whereby the frequency dependence is not exclusively internal. In other words, the frequency of one  trait might increase or decrease the fitness of the other. The following equation can substitute equation [2]: 
+
+\xavi{equation6}
+
+where the four new parameters cAn, cKn, cAm, and cKm, measure respectively the negative (or positive) effect determined by the number of individuals of the “other” traits. When cA>0 the Allee threshold is essentially increased, while when cK>0 the carrying capacity is diminished as function of the other population., with larger values of c dictates a stronger influence of the other population. 
+
+One simple scenario is to assume that one strategy, say n, is dominant over its alternative m. We can  set cAn=0.1,  cKn=0.1,  cAm=-0.1, and  cKm=-0.1. Here negative values of c indicate a positive enhancement of one strategy over the other (in this case n gets benefit to the expense of m). 
+
+\section{Discussion}
+
+\enrico{We need to mention that some behaviour might actually enhance the other community (or be detrimental). This can be modelled using a competition coefficient as in Jang 2013. I don't think we need to explore this but it is definitely worth mentioning!}
+
+\enrico{Mutually exclusive trait, but does not necessarily imply HG vs FA mixture of strategy (say 50\%HG vs 50\%F) can be assumed to be a trait. Perhaps this needs to be mentioned earlier when the model is introduced.}
+
+\section{Conclusion}
+
+BlaBlaBla
+
+\section{References}
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{references}
+
+\end{document}
+
