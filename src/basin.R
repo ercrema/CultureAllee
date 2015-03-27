@@ -1,8 +1,6 @@
 basin<-function(x.lim,y.lim,points,multicore=TRUE,r.n,r.m,Am,Km,An,Kn,z,timeSteps,b=2,cores=1,cAn,cAm,cKn,cKm,verbose=TRUE)
 {
-    require(utils)
-    require(foreach)
-    require(doParallel)
+
 
     x <- seq(from = x.lim[1], to = x.lim[2], length = points)
     y <- seq(from = y.lim[1], to = y.lim[2], length = points)
@@ -14,6 +12,9 @@ basin<-function(x.lim,y.lim,points,multicore=TRUE,r.n,r.m,Am,Km,An,Kn,z,timeStep
 
     if (multicore==TRUE)
         {
+            require(utils)
+            require(foreach)
+            require(doParallel)
             registerDoParallel(cores=cores)
             tmp=foreach(i=1:nrow(res), .combine=rbind) %dopar%
             {
@@ -131,7 +132,7 @@ basinCount<-function(res)
         Sn=sum(res$class==4)/nrow(res)
         E=sum(res$class==5)/nrow(res)
         
-        return(list(UE=UE,SE=E,Sm=Sm,Sn=Sn,E=E))
+        return(list(UE=UE,SE=SE,Sm=Sm,Sn=Sn,E=E))
     }
 
 
