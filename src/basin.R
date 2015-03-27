@@ -100,7 +100,39 @@ basePlot<-function(...)
     }
 
 
+basinCount<-function(res)
+    {
+        #Identify Stable Attractor Node
+        Em=ExpStableNode(Kn,Km,cKn,cKm)$m
+        En=ExpStableNode(Kn,Km,cKn,cKm)$n
+        
+        #deal with floating point arithmethic problem#
+        res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=Km,USE.NAMES=F,simplify=TRUE)))]=Km
+        res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=Kn,USE.NAMES=F,simplify=TRUE)))]=Kn
+        res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=Em,USE.NAMES=F,simplify=TRUE)))]=Em
+        res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=En,USE.NAMES=F,simplify=TRUE)))]=En
+        res$m.final[which(as.logical(sapply(res$m.final,all.equal,target=0,USE.NAMES=F,simplify=TRUE)))]=0
+        res$n.final[which(as.logical(sapply(res$n.final,all.equal,target=0,USE.NAMES=F,simplify=TRUE)))]=0
 
+        #Define Classes
+        res$class=1 #Default Class (Unstable Equilibria)
+        # E1: Stable Coexistence
+        res$class[which(res$m.final==Em&res$n.final==En)]=2
+        # E2m: Dominance m
+        res$class[which(res$m.final==Km&res$n.final==0)]=3   
+        # E2n: Dominance n
+        res$class[which(res$m.final==0&res$n.final==Kn)]=4      
+        # E3: Extinction 
+        res$class[which(res$m.final==0&res$n.final==0)]=5
+
+        UE=sum(res$class==1)/nrow(res)
+        SE=sum(res$class==2)/nrow(res)
+        Sm=sum(res$class==3)/nrow(res)
+        Sn=sum(res$class==4)/nrow(res)
+        E=sum(res$class==5)/nrow(res)
+        
+        return(list(UE=UE,SE=E,Sm=Sm,Sn=Sn,E=E))
+    }
 
 
 
