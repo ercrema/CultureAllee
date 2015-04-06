@@ -18,9 +18,17 @@ for (t in 2:timeSteps)
      Rn=r.n*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)
      
 #transmission rates
-     if (abs(Rm-Rn)>=(b*DELTA)) {zeta=z}
-     if (abs(Rm-Rn)<(b*DELTA)) {zeta=z*abs(Rm-Rn)/(b*DELTA)}
 
+     if (m[t-1]>0&n[t-1]>0)
+         {
+             if (abs(Rm-Rn)>=(b*DELTA)) {zeta=z}
+             if (abs(Rm-Rn)<(b*DELTA)) {zeta=z*abs(Rm-Rn)/(b*DELTA)}
+         }
+     else
+         {
+             zeta=0
+         }
+     
 #switch function
      if (Rm==Rn) {C=0} #No transmission
      if(Rm>Rn) {C=zeta*(n[t-1]+ Rn*n[t-1])} # The proportion moving is a function of the updated population size
