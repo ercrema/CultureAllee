@@ -48,6 +48,9 @@ for (t in 2:timeSteps)
              n[t:timeSteps]=n[t]
              break()
          }
+# Avoid Negative Computation
+     if (m[t]<0){m[t]=0}
+     if (n[t]<0){n[t]=0}
  }
     if (storeFinalOnly==FALSE)
         {return(list(m=m,n=n))}
