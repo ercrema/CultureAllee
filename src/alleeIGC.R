@@ -19,7 +19,7 @@ for (t in 2:timeSteps)
      
 #transmission rates
 
-     if (m[t-1]>0&n[t-1]>0)
+     if (m[t-1]>0|n[t-1]>0)
          {
              if (abs(Rm-Rn)>=(b*DELTA)) {zeta=z}
              if (abs(Rm-Rn)<(b*DELTA)) {zeta=z*abs(Rm-Rn)/(b*DELTA)}
