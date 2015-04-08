@@ -21,7 +21,7 @@ cAm=0
 cKn=0
 cKm=0
 r.n=0.05
-r.m=EqualiseMaxGrowthRate(An=An,Am=Am,Kn=Kn,Km=Km)*r.n
+r.m=r.n
 x.lim=c(0,1.2)
 y.lim=c(0,1.2)
     
