@@ -93,11 +93,11 @@ trajPlot<-function(ini.m=1001,ini.n=1001,...)
 basePlot<-function(...)
     {
         tmp=allee(...)
-        plot(tmp$m,type="l",ylim=c(0,1),col="indianred",lwd=2,ylab="Population Size",xlab="Time")
+        plot(tmp$m,type="l",ylim=c(0,max(unlist(tmp))),col="indianred",lwd=2,ylab="Population Size",xlab="Time")
         axis(side=4,at=c(Km,Kn),labels=c(expression(K[m]),expression(K[n])),hadj=0.5,las=2)
         abline(h=c(Km,Kn),lty=2)
         lines(tmp$n,col="royalblue",lwd=2)
-        legend("right",legend=c("m","n"),lty=1,lwd=2,col=c("indianred","royalblue"))
+        legend("bottomright",legend=c("m","n"),lty=1,lwd=2,col=c("indianred","royalblue"))
     }
 
 
