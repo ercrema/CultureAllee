@@ -19,35 +19,33 @@ for (x in 1:4)
                 if (zz==1)
                     {
                         plot(tmp$lambda,tmp[,2+x],type="l",lty=2,lwd=1,ylim=c(0,max(data[,2+x])),xlab=expression(lambda),main=mainTitles[x],ylab="Basin Proportion")
+                             if (x==1)
+                                 {
+                                     legend("topright",legend=c("z=0","z=0.05","z=0.1","z=0.25","z=0.5"),lty=c(2,1,1,1,1),col=colSEQ)
+                                 }
                     }
                 else
                     {
                         lines(tmp$lambda,tmp[,2+x],col=colSEQ[zz])
                     }
+                
             }
 
     }
+dev.print(device=pdf,"~/github/CultureAllee/overlapAnalysis/testplot1.pdf")
 
 
 
 
-z0<-subset(data,z==0)
-z0<-z0[order(z0[,1]),]
-plot(z0$lambda,z0$Sn,type="l",lty=2,lwd=1,ylim=c(0,0.35),xlab="Basin Area")
 
-z005<-subset(data,z==0.05)
-z005<-z005[order(z005[,1]),]
-lines(z005$lambda,z005$Sn,col="yellow")
+                                        #line plot
+par(mfrow=c(2,2))
 
-z01<-subset(data,z==0.1)
-z01<-z01[order(z01[,1]),]
-lines(z01$lambda,z01$Sn,col="orange")
+        contourplot(UE ~ lambda * z, data = data,main="Unstable Equilibira")
+        contourplot(SE ~ lambda * z, data = data,main="Stable Coexistence")
+        contourplot(Sm ~ lambda * z, data = data,main="n-Extinct")
+        contourplot(Sn ~ lambda * z, data = data,main="m-Extinct")
 
-z25<-subset(data,z==0.25)
-z25<-z25[order(z25[,1]),]
-lines(z25$lambda,z25$Sn,col="red")
+dev.print(device=pdf,"~/github/CultureAllee/overlapAnalysis/testplot1.pdf")
 
 
-z05<-subset(data,z==0.5)
-z05<-z05[order(z05[,1]),]
-lines(z05$lambda,z05$Sn,col="darkred")
