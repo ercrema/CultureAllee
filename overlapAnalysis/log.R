@@ -1,8 +1,14 @@
 
+#data<-read.csv("./CultureAllee/overlapAnalysis/binded.csv",header=F)
+#data<-data[,-1]
+#colnames(data)<-c("lambda","z","UE","SE","Sm","Sn","E")
+#data<-rbind(data,c(0.17,0.25,0,0.719575,0.2122,0.05495,0.013275))
+#write.csv(data,"./CultureAllee/overlapAnalysis/bindedHiRes.csv")
+
 #Read Data and Name Columns
-data<-read.csv("./CultureAllee/overlapAnalysis/binded.csv",header=F)
+
+data<-read.csv("./CultureAllee/overlapAnalysis/bindedHiRes.csv",header=TRUE)
 data<-data[,-1]
-colnames(data)<-c("lambda","z","UE","SE","Sm","Sn","E")
 
 
 # absolute line plot
@@ -106,21 +112,5 @@ for (x in 2:4)
 
 dev.print(device=pdf,"~/github/CultureAllee/overlapAnalysis/percentage.pdf")
 
-
-
-
-
-
-
-
-                                        #line plot
-par(mfrow=c(2,2))
-
-        contourplot(UE ~ lambda * z, data = data,main="Unstable Equilibira")
-        contourplot(SE ~ lambda * z, data = data,main="Stable Coexistence")
-        contourplot(Sm ~ lambda * z, data = data,main="n-Extinct")
-        contourplot(Sn ~ lambda * z, data = data,main="m-Extinct")
-
-dev.print(device=pdf,"~/github/CultureAllee/overlapAnalysis/testplot1.pdf")
 
 
