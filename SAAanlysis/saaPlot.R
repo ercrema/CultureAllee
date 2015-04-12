@@ -73,3 +73,16 @@ allee(ini.m=ExpStableNode(Kn,Km,cKn,cKm)$m,ini.n=ExpStableNode(Kn,Km,cKn,cKm)$n,
 allee(ini.m=0.35,ini.n=1.032,Am=Am,Km=Km,An=An,Kn=Kn,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,r.m=r.m,r.n=r.n,z=z,storeFinalOnly=TRUE,timeSteps=10000)
 
 #this is due to floating point arithmethic, somehowe when m=0.36 and n=1.04, Rm and Rn are both different from 0 but too close so that after multiplciation they are virtually treated as if they are zero.
+
+
+
+
+
+# Figure X Unstable Equilibria
+load("/Users/enryu/github/CultureAllee/SAAanlysis/figureX.RData")
+basinPlot(res=figureX,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm)
+abline(h=c(An,Kn),lty=2,col="white")
+abline(v=c(Am,Km),lty=2,col="white")
+axis(side=3,at=c(Am,Km),labels=c(expression(A[m]),expression(K[m])),padj=0.8)
+axis(side=4,at=c(An,Kn),labels=c(expression(A[n]),expression(K[n])),hadj=0.5,las=2)
+dev.print(device=pdf,"./SAAanlysis/figX.pdf")
