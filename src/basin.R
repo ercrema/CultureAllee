@@ -79,7 +79,7 @@ basinPlot<-function(res,Am,Km,An,Kn,cKn,cKm,...)
         res$col[which(res$m.final==0&res$n.final==0)]=5  
         #plot(res[,1],res[,2],col=res$col,x.lab="m",y.lab="n",pch=15)
         tmp=rasterFromXYZ(res[,c(1,2,5)])
-        image(tmp,col=c("orange","darkgreen","indianred","royalblue","lightgrey"),zlim=c(1,5),xlab="m",ylab="n",...)
+        image(tmp,col=c("orange","darkgreen","indianred","royalblue","lightgrey"),zlim=c(1,5),...)
     }
 
 
