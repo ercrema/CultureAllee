@@ -129,24 +129,35 @@ Here we consider only scenarios where the node $x=K_x$ is stable. In this case t
 \begin{figure}[h!]
   \centering
       \includegraphics[width=0.7\textwidth]{./figures/figure2.pdf}
-  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green). olid lines represent trajectories of the system for different initial conditions, represented by dots. Model parameters: $A_a=0.2$; $K_a=0.7$; $A_b=0.5$; $K_b=1.0$; $r_a=r_b=0.05$}.
+  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green). Solid lines represent trajectories of the system for different initial conditions, represented by dots. Model parameters: $A_a=0.2$; $K_a=0.7$; $A_b=0.5$; $K_b=1.0$; $r_a=r_b=0.05$}.
     \label{fig:NoTransmissionBasin}
 \end{figure}
 
 \subsection{Effects of social learning $z>0$}
 
-When social learning is enabled (i.e. when $z>0$), the stability of the nodes are perturbed by individuals switching from one strategy to another. The minimum implication of these perturbations is a change in the basins of attractions. Initial conditions closer to the boundaries between one basin and another will most profoundly be affected, potentially leading to a complete different equilibria with slightest change in the degree of reliance on social learning. Figure \ref{fig:basicEffectSocialLearning} shows an example of this. When social learning is absent, the initial conditions $i$, $j$, and $k$ respectively result into ...
+When social learning is enabled (i.e. when $z>0$), the stability of the nodes are perturbed by individuals switching from one strategy to another. The minimum implication of these perturbations is a change in the basins of attractions. Initial conditions closer to the boundaries between one basin and another will most profoundly be affected, potentially leading to a complete different equilibria with slightest change in the degree of reliance on social learning. Figure \ref{fig:basicEffectSocialLearning} shows an example of this. When social learning is not present (fig. \ref{fig:basicEffectSocialLearning} -a), the initial conditions $i$, $j$, and $k$ result into a stable equilibrium at $a=K_a$ and $b=K_b$, whilst the starting point $l$ leads to the extinction of $b$. When $z=0.05$ (fig.\ref{fig:TransmissionBasin}-b), the basins of attractions are modified, resulting into different trajectories and possibly equilibria for the same initial conditions without social learning. Thus $i$ and $k$ are no longer leading to the coexistence of both traits but to the demise of one or the other, whilst $l$ now ensure the coexistence of both variants. 
 
-%Figure showing z=0 and z=something to illustrate the effect of social learning
+\begin{figure}[h!]
+  \centering
+      \includegraphics[width=\textwidth]{./figures/figure3.pdf}
+  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.4$; $K_b=1.0$; $r_a=r_b=0.05$; $z=0$ (left panel), $z=0.05$ (left panel) }
+    \label{fig:TransmissionBasin}
+\end{figure}
 
-When the magnitude of social learning is sufficiently high, the system can exhibit exhibit limit-cycles 
+When the magnitude of social learning is sufficiently high, the system is subject to effects similar to effects to increase in the per-capita growth rate, with the consequent decrease in the stability of the fixed points. Figure \ref{fig:bifurcationWithTransmission} shows the bifurcation diagram for three different initial settings of $a$ and $b$. In the first two cases, increase in $z$ leads to a shift of the equilibria, that remains however constant for larger reliance on social learning. The third case shows, around $z=0.5$ a transition from a point attractor to a system characterised by repeated shifts between the two transmission strategies. 
+
+\begin{figure}[h!]
+  \centering
+      \includegraphics[width=\textwidth]{./figures/figure4.jpg}
+  \caption{Bifurcation diagram for $a$ (red) and $b$ (blue) as a function of social learning ($z$): left: $a=0.11$, $b=0.4$; Middle: $a=0.5$, $b=0.21$, $a=0.4$, $b=0.4$. Model parameters:  $A_a=0.1$; $K_a=0.6$; $A_b=0.2$; $K_b=0.7$; $r_a=r_b=0.05$}
+    \label{fig:bifurcationWithTransmission}
+\end{figure}
 
 
-
-%Stability nodes remain unchanged for low z, high z determines unstable equilibria
-%illustrate examples with different settings
-%overlap analysis and changes in basin size
+%Overlap Analysis Here
 %For stability analysis show that the settings of r guarantees that the system is at a point equilibrium. First Bifurcation Point plot.  
+
+
 
 
 \subsection{Effect of competition}
