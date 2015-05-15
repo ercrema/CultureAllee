@@ -143,7 +143,7 @@ When social learning is enabled (i.e. when $z>0$), the stability of the nodes ar
 \begin{figure}[h!]
   \centering
       \includegraphics[width=\textwidth]{./figures/figure3.pdf}
-  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.4$; $K_b=1.0$; $r_a=r_b=0.05$; $z=0$ (left panel), $z=0.05$ (left panel) }
+  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.4$; $K_b=1.0$; $r_a=r_b=0.05$; $z=0$ (left panel) and $z=0.05$ (right panel) }
     \label{fig:TransmissionBasin}
 \end{figure}
 
@@ -157,37 +157,44 @@ When the magnitude of social learning is sufficiently high, the system is subjec
 \end{figure}
 
 
-%Overlap Analysis Here
-%For stability analysis show that the settings of r guarantees that the system is at a point equilibrium. First Bifurcation Point plot.  
+\subsection{Effects of strategy overlap}
+% XAVI better title?
 
+Previous results suggest that the percentage of population that can switch strategies (i.e. the $z$ parameter) has major effects on the final equilibria. However, this will also depend on the interaction between the intervals where frequency dependence is $\geq 0$ (i.e. $[A_a,K_a]$ and $[A_b,K_b]$) . We have explored this relation introducing a new parameter $\lambda \in (0,1)$ and defining the positive interval for strategy $b$ as follows:
 
+\begin{align}
+\label{eqOverlap}
+\begin{cases}
+A_b = A_a + \lambda A_a\\
+K_b = K_a + \lambda K_a
+\end{cases}
+\end{align}
 
+The dynamics of two strategies are similar for low values of $\lambda$. High values indicate that the minimum number of individuals needed to achive positive fitness in $b$ gets closer to $K_a$, while the population size that $b$ can sustain also grows. As a consequence, the number of individuals switching strategies when $b$ has lower payoff is also higher and could potentially overload $a$ due to its lower $K_a$.
+
+Figure XX shows how the increase in $\lambda$ affects the equilibria of our model.
+
+% XAVI add results and figure
 
 \subsection{Effect of competition}
 %what if competition
 %show new stable points
 %show dynamics? 
 
-The model described in equations \ref{eq1}-\ref{eq4} assumes that the resource pool of the two strategy are completely independent to each other. In reality many strategies have some degree of competition, whereby the frequency dependence is not exclusively internal. In other words, the frequency of one trait might increase or decrease the fitness of the other. The following equation can substitute equation~\eqref{eq2}: 
+The model described in equations \ref{eq1}-\ref{eq4} assumes that the resource pool of the two strategy are completely independent to each other. In reality many strategies have some degree of competition, whereby the frequency dependence is not exclusively internal. In other words, the frequency of one trait might increase or decrease the fitness of the other. The following equation can substitute equation~\eqref{eqCompetition}: 
 
+\begin{align}
+\begin{cases}
+R_{a,t}& = r_a (\frac{a_t-c_{A_a}b_t}{A_a}-1)(1-\frac{a_t-c_{K_a}b_t}{K_a})\\
+R_{b,t}& = r_b (\frac{b_t-c_{A_b}a_t}{A_b}-1)(1-\frac{b_t-c_{K_b}a_t}{K_b}) 
+\end{cases}
+\label{eqCompetition}
+\end{align}
 
-where the four new parameters cAn, cKn, cAm, and cKm, measure respectively the negative (or positive) effect determined by the number of individuals of the “other” traits. When cA>0 the Allee threshold is essentially increased, while when cK>0 the carrying capacity is diminished as function of the other population., with larger values of c dictates a stronger influence of the other population. 
+where the four new parameters $c_{A_a}$, $c_{A_b}$, $c_{K_a}$ and $c_{K_b}$, measure respectively the negative (or positive) effect determined by the number of individuals of the “other” traits. When $c_{A}>0$ the Allee threshold is essentially increased, while when $c_{K}>0$ the carrying capacity is diminished as function of the other population. Larger values of any of the $c$ parameters dictates a stronger influence of the other population. 
 
-One simple scenario is to assume that one strategy, say n, is dominant over its alternative m. We can  set cAn=0.1,  cKn=0.1,  cAm=-0.1, and  cKm=-0.1. Here negative values of c indicate a positive enhancement of one strategy over the other (in this case n gets benefit to the expense of m). 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Figure XX shows a scenario where strategy $a$ is dominant over strategy $b$.
+% XAVI add results and figure
 
 \section{Discussion}
 
