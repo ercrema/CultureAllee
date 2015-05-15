@@ -2,7 +2,6 @@ source("../../src/alleeIGC.R")
 source("../../src/basin.R")
 source("../../src/utility.R")
 
-lambda=0.15
 z=0.05
 Am=0.2
 An=0.4
