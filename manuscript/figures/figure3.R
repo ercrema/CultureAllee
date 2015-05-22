@@ -1,6 +1,6 @@
-source("./src/alleeIGC.R")
-source("./src/basin.R")
-source("./src/utility.R")
+source("../../src/alleeIGC.R")
+source("../../src/basin.R")
+source("../../src/utility.R")
 
                                         #Figure 3
 lambda=0.15
@@ -30,14 +30,16 @@ figure3b=basin(x.lim=x.lim,y.lim=x.lim,points=150,timeSteps=10000,r.n=r.n,r.m=r.
 save.image("figure3.RData")
 
 
-load("/Users/enryu/github/CultureAllee/manuscript/figures/figure3.RData")
-setwd("~/github/CultureAllee/")
-source("./src/alleeIGC.R")
-source("./src/basin.R")
-source("./src/utility.R")
+load("figure3.RData")
+source("../../src/alleeIGC.R")
+source("../../src/basin.R")
+source("../../src/utility.R")
+
+
+pdf('figure3.pdf', width=14, height=8)
 
 par(mfrow=c(1,2))
-basinPlot(res=figure3a,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm,main="a",xlab="a",ylab="b")
+basinPlot(res=figure3a,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm,main="z=0",xlab="a",ylab="b")
 abline(h=c(An,Kn),lty=2,col="white")
 abline(v=c(Am,Km),lty=2,col="white")
 axis(side=3,at=c(Am,Km),labels=c(expression(A[a]),expression(K[a])),padj=0.8)
@@ -55,7 +57,7 @@ text(0.5,0.65,labels="j",col=1,font=2)
 
 
 
-basinPlot(res=figure3b,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm,main="b",xlab="a",ylab="b")
+basinPlot(res=figure3b,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm,main="z=0.05",xlab="a",ylab="b")
 abline(h=c(An,Kn),lty=2,col="white")
 abline(v=c(Am,Km),lty=2,col="white")
 axis(side=3,at=c(Am,Km),labels=c(expression(A[a]),expression(K[a])),padj=0.8)
@@ -70,6 +72,5 @@ text(0.6483907,0.4705729,labels="k",col=1,font=2)
 text(0.9674449,0.4328860,labels="l",col=1,font=2)
 text(0.5,0.65,labels="j",col=1,font=2)
 
-dev.print(device=pdf,"/Users/enryu/github/CultureAllee/manuscript/figures/figure3.pdf")
-
+dev.off()
 
