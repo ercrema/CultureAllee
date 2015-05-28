@@ -3,23 +3,30 @@
 from scipy import arange
 
 def main():
-    # 1 - exploration lambda/z
     """
+    # 1 - exploration lambda/z
     competitionValues = [0.0]
     zValues = [0.05, 0.2]
     lambdaValues = [0.5, 0.75, 1]
     """
-    """
     # 2 - exploration lambda/z (relative figure)
     competitionValues = [0.0]
     zValues = arange(0,1.1,0.1)
-    lambdaValues = arange(0.5,1,0.05)
-    """
+    lambdaValues = arange(0.5,1.1,0.05)
 
+    """
     # 3 - exploration competition/z 
     competitionValues = [-0.1,0.1]
     zValues = [0.05, 0.2]
     lambdaValues = [0.75]
+    """
+
+    """
+    # 4 - z (figure 3)
+    competitionValues = [0.0]
+    zValues = [0,0.05]
+    lambdaValues = [1/3]
+    """
 
     tasksFile = open('allee.tasks', 'w')
     numRun = 0

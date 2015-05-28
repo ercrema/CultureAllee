@@ -28,7 +28,7 @@ diff = Km-Am
 An=Am + (1-lambda)*diff
 Kn=Km + (1-lambda)*diff
 
-result <- basin(x.lim=x.lim,y.lim=x.lim,points=150,timeSteps=10000,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,verbose=F,multicore=TRUE,cores=16)
+result <- basin(x.lim=x.lim,y.lim=x.lim,points=300,timeSteps=10000,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,verbose=F,multicore=TRUE,cores=16)
 
 resultsFile <- paste('result_',paste(sprintf('%03d',run, sep=""),'.Rdata', sep=""), sep="")
 print(resultsFile)
