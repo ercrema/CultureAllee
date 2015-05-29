@@ -147,6 +147,7 @@ Here we consider only scenarios where the node $x=K_x$ is stable. In this case t
 
 When social learning is enabled (i.e. when $z>0$), the stability of the nodes are perturbed by individuals switching from one strategy to another. The minimum implication of these perturbations is a change in the shape of the basins of attractions. Initial conditions closer to the boundaries between one basin and another will most profoundly be affected, potentially leading to a complete different equilibria with slightest change in the degree of reliance on social learning. Figure \ref{fig:TransmissionBasin} shows an example of this. When social learning is not present (fig.~\ref{fig:TransmissionBasin}a), the initial conditions $i$, $j$, and $k$ result into a stable equilibrium at $a=K_a$ and $b=K_b$, whilst the starting point $l$ leads to the extinction of $b$. When $z=0.05$ (fig.~\ref{fig:TransmissionBasin}b), the basins of attractions are modified, resulting into different trajectories and possibly equilibria for the same initial conditions without social learning. Thus $i$ and $k$ are no longer leading to the coexistence of both traits but to the demise of one or the other, whilst $l$ now ensure the coexistence of both variants. 
 
+% XAVI put high res figure
 \begin{figure}[h!]
   \centering
       \includegraphics[width=\textwidth]{./figures/figure3.pdf}
@@ -177,11 +178,28 @@ K_b = K_a + \lambda K_a
 \end{cases}
 \end{align}
 
-The dynamics of two strategies are similar for low values of $\lambda$. High values indicate that the minimum number of individuals needed to achive positive fitness in $b$ gets closer to $K_a$, while the population size that $b$ can sustain also grows. As a consequence, the number of individuals switching strategies when $b$ has lower payoff is also higher and could potentially overload $a$ due to its lower $K_a$.
+The dynamics of two strategies are similar for low values of $\lambda$. High values indicate that the minimum number of individuals needed to achieve positive fitness in $b$ gets closer to $K_a$, while the population size that $b$ can sustain also grows. As a consequence, the number of individuals switching strategies when $b$ has lower payoff is also higher and could potentially overload $a$ due to its lower $K_a$.
 
-Figure XX shows how the increase in $\lambda$ affects the equilibria of our model.
+Figure \ref{fig:overlap} shows how the degree of overlap affects the equilibria of our model with and without social learning. The relation between the two processes strongly affects the shape of the different basins in a non-dynamic fashion.
 
-% XAVI add results and figure
+% XAVI put high res figure, and update left, middle, right order
+
+\begin{figure}[h!]
+  \centering
+      \includegraphics[width=\textwidth]{./figures/figure5}
+  \caption{Basins of attraction for $z=0.05$ (top) and $z=0.2$ (bottom); $\lambda=1$ (left), $\lambda=0.75$ (middle) and $\lambda=0.5$}
+    \label{fig:overlap}
+\end{figure}
+
+Figure \ref{fig:percentages} explores in deeper detail the effects of both parameters ($z$ and $lambda$) on the basin of each equilibria. An increase in $z$ decreases the possibility of having coexistence for high similarity between strategies $a$ and $b$ (i.e. $\lambda \geq 0.9$. From $0.9 < \lambda < 0.55$ the dynamics remain remarkably similar, while for $\lambda = 0.5$ the effects of social learning decreases because of the large gap between $A$ and $K$ of both strategies.
+
+\begin{figure}[h!]
+  \centering
+      \includegraphics[width=\textwidth]{./figures/figure6}
+  \caption{Percentages of the entire space falling in each basin of attraction for different values of $\lambda$. X axis controls the parameter $z$ defining social learning.}
+    \label{fig:percentages}
+\end{figure}
+
 
 \subsection{Effect of competition}
 %what if competition
@@ -200,8 +218,16 @@ R_{b,t}& = r_b (\frac{b_t-c_{A_b}a_t}{A_b}-1)(1-\frac{b_t-c_{K_b}a_t}{K_b})
 
 where the four new parameters $c_{A_a}$, $c_{A_b}$, $c_{K_a}$ and $c_{K_b}$, measure respectively the negative (or positive) effect determined by the number of individuals of the “other” traits. When $c_{A}>0$ the Allee threshold is essentially increased, while when $c_{K}>0$ the carrying capacity is diminished as function of the other population. Larger values of any of the $c$ parameters dictates a stronger influence of the other population. 
 
-Figure XX shows a scenario where strategy $a$ is dominant over strategy $b$.
-% XAVI add results and figure
+Figure \ref{fig:competition} shows a scenario where strategy $a$ is dominant over strategy $b$.
+
+\begin{figure}[h!]
+  \centering
+      \includegraphics[width=\textwidth]{./figures/figure7}
+  \caption{The impact of competition on the basins of attraction for the different equilibria. The Parameters used are $z=0.05$ (left) and $z=0.2$ (right) for social learning, and $c=-0.1$ (top) and $c=0.1$ (bottom) for competition.}
+    \label{fig:competition}
+\end{figure}
+
+% XAVI some brief discussion on results here, and update the dashed lines
 
 \section{Discussion}
 
