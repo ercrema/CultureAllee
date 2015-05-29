@@ -11,7 +11,7 @@ basinPlot(res=result,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm,main=title,xlab="a"
 abline(h=c(An,Kn),lty=2,col="white")
 abline(v=c(Am,Km),lty=2,col="white")
 axis(side=3,at=c(Am,Km),labels=c(expression(A[a]),expression(K[a])),padj=0.8)
-axis(side=4,at=c(An,Kn),labels=c(expression(Ab),expression(Kb)),hadj=0.5,las=2)
+axis(side=4,at=c(An,Kn),labels=c(expression(A[b]),expression(K[b])),hadj=0.5,las=2)
 
 load('../../experimentMN3/03_competition/result_001.Rdata')
 title=substitute(paste(z == i, " ", c== j), list(i=z,j=competition))
@@ -19,7 +19,7 @@ basinPlot(res=result,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm,main=title,xlab="a"
 abline(h=c(An,Kn),lty=2,col="white")
 abline(v=c(Am,Km),lty=2,col="white")
 axis(side=3,at=c(Am,Km),labels=c(expression(A[a]),expression(K[a])),padj=0.8)
-axis(side=4,at=c(An,Kn),labels=c(expression(Ab),expression(Kb)),hadj=0.5,las=2)
+axis(side=4,at=c(An,Kn),labels=c(expression(A[b]),expression(K[b])),hadj=0.5,las=2)
 
 load('../../experimentMN3/03_competition/result_002.Rdata')
 title=substitute(paste(z == i, " ", c== j), list(i=z,j=competition))
@@ -27,7 +27,7 @@ basinPlot(res=result,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm,main=title,xlab="a"
 abline(h=c(An,Kn),lty=2,col="white")
 abline(v=c(Am,Km),lty=2,col="white")
 axis(side=3,at=c(Am,Km),labels=c(expression(A[a]),expression(K[a])),padj=0.8)
-axis(side=4,at=c(An,Kn),labels=c(expression(Ab),expression(Kb)),hadj=0.5,las=2)
+axis(side=4,at=c(An,Kn),labels=c(expression(A[b]),expression(K[b])),hadj=0.5,las=2)
 
 load('../../experimentMN3/03_competition/result_003.Rdata')
 title=substitute(paste(z == i, " ", c== j), list(i=z,j=competition))
@@ -35,7 +35,7 @@ basinPlot(res=result,Am=Am,Km=Km,An=An,Kn=Kn,cKn=cKn,cKm=cKm,main=title,xlab="a"
 abline(h=c(An,Kn),lty=2,col="white")
 abline(v=c(Am,Km),lty=2,col="white")
 axis(side=3,at=c(Am,Km),labels=c(expression(A[a]),expression(K[a])),padj=0.8)
-axis(side=4,at=c(An,Kn),labels=c(expression(Ab),expression(Kb)),hadj=0.5,las=2)
+axis(side=4,at=c(An,Kn),labels=c(expression(A[b]),expression(K[b])),hadj=0.5,las=2)
 
 dev.off()
 
