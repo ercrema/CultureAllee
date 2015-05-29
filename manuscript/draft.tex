@@ -1,5 +1,6 @@
 
-\documentclass[preprint,authoryear]{elsarticle}
+%\documentclass[review,authoryear]{elsarticle}
+ \documentclass[3p,authoryear,twocolumn]{elsarticle} %Just to give a feel of how it would look like
 
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
@@ -59,7 +60,8 @@ Several cultural traits are expected to show such density dependence. In particu
 
 However, density dependence does not necessarily imply only a negative correlation between population size and payoff/fitness. In many ecological contexts an inverse density dependence, whereby per capita growth rate is positively correlated with population density, has been noted. This phenomena, known as Allee effect \citep{allee1958,courchamp_etal_1999}, is generally explained by a range of processes from cooperation to unconscious mutual facilitation that enhances individual fitness at low population density. This inverse density dependence can be further distinguished between \emph{weak} and \emph{strong} Allee effect. In the former case, the reproductive fitness is always positive at low population density, whilst in the latter case we expect the presence of a critical density below which fitness becomes negative \citep{Wang_and_Kot_2001}. The implications of direct and inverse density dependence has been extensively studied both from the empirical and theoretical perspectives, including its effect of habitat selection \citep{greene_and_stamps_2001}, resource competition \citep{jang2013}, and dispersal \citep{steele_2009}, as well as specific events such as shifts in settlement pattern \citep{crema_2014}, colonisation events,  \citep{kennet_etal_2006}, genetic consequences on expanding population \citep{roques_etal_2012} and extinction of languages \citep{sutherland_2003}  
 
-Although a systematic review and a shared theoretical framework akin to those proposed in population ecology \citep{kramer_etal_2009} is not present in the social sciences, these studies suggest that there are several lines of evidence supporting the existence of both direct and inverse density dependence in cultural and behavioural traits. For example several ethnographic studies on small scale societies show how the per-capita return of hunting groups show higher yield when the group size is not too small nor too big~\citep{hill_and_hawkes_1983,janssen_and_hill_2014}. Other instances of inverse density dependence include population level activities such as the use of anthropogenic fire~\citep{bird2013} or selective hunting~\citep{dods_2002} which often require a population size above a certain critical density in order to promote sufficient niche enhancement and a consequent increase in payoff~\citep{rowley-conwy_and_layton_2011}. In a broader sense any cultural trait that benefits from direct or indirect cooperation \citep{}, promote positive niche construction \citep{vandermeer_2008}, and requires a critical mass \citep{rogers_2003} are likely to exhibit some degree of Allee effect. This is thus not limited necessarily to the domain of traits directly promoting reproductive fitness, and hence can include language~\citep{kandler2009}, organisational populations~\citep{caroll_and_hannan_1989} and communication technologies \citep{van_slyke_perceived_2007}.
+Although a systematic review and a shared theoretical framework akin to those proposed in population ecology \citep{kramer_etal_2009} is not present in the social sciences, these studies suggest that there are several lines of evidence supporting the existence of both direct and inverse density dependence in cultural and behavioural traits. For example several ethnographic studies on small scale societies show how the per-capita return of hunting groups show higher yield when the group size is not too small nor too big~\citep{hill_and_hawkes_1983,janssen_and_hill_2014}. Other instances of inverse density dependence include population level activities such as the use of anthropogenic fire~\citep{bird2013} or selective hunting~\citep{dods_2002} which often require a population size above a certain critical density in order to promote sufficient niche enhancement and a consequent increase in payoff~\citep{rowley-conwy_and_layton_2011}. In a broader sense any cultural trait that benefits from direct or indirect cooperation %Add reference \citep{}, 
+promote positive niche construction \citep{vandermeer_2008}, and requires a critical mass \citep{rogers_2003} are likely to exhibit some degree of Allee effect. This is thus not limited necessarily to the domain of traits directly promoting reproductive fitness, and hence can include language~\citep{kandler2009}, organisational populations~\citep{caroll_and_hannan_1989} and communication technologies \citep{van_slyke_perceived_2007}.
 
 Here we explore the consequences of Allee effect in the evolutionary dynamics of cultural transmission, assuming that: 1) the social learning strategy is payoff-based; and 2)  the payoff is equivalent to the reproductive fitness of each individual. We will demonstrate, by means of a difference equation, that direct and inverse density dependence can strongly affect the evolutionary trajectory of the system leading to the emergence of stable and unstable equilibria, as well as the occurrence of temporary or permanent episodes of reversion to suboptimal cultural variants. 
 
@@ -129,7 +131,7 @@ When $z=0$, equations \ref{eq1}-\ref{eq4} \emph{de facto} portray a standard cub
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[width=0.7\textwidth]{./figures/figure1.jpg}
+      \includegraphics[width=0.5\textwidth]{./figures/figure1.jpg}
   \caption{Bifurcation diagram of a single population model with $A_x=0.2$ and $K_x=0.8$. For $0<r_x<0.6649747$, any initial value of $x$ greater than $A_x$ converge to $K_x$.}
     \label{fig:bifurcationDiagram}
 \end{figure}
@@ -138,7 +140,7 @@ Here we consider only scenarios where the node $x=K_x$ is stable. In this case t
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[width=0.7\textwidth]{./figures/figure2.pdf}
+      \includegraphics[width=0.5\textwidth]{./figures/figure2.pdf}
   \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green). Solid lines represent trajectories of the system for different initial conditions, represented by dots. Model parameters: $A_a=0.2$; $K_a=0.7$; $A_b=0.5$; $K_b=1.0$; $r_a=r_b=0.05$}.
     \label{fig:NoTransmissionBasin}
 \end{figure}
@@ -149,7 +151,7 @@ When social learning is enabled (i.e. when $z>0$), the stability of the nodes ar
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[width=\textwidth]{./figures/figure3.pdf}
+      \includegraphics[width=0.5\textwidth]{./figures/figure3.pdf}
   \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.4$; $K_b=1.0$; $r_a=r_b=0.05$; $z=0$ (left panel) and $z=0.05$ (right panel) }
     \label{fig:TransmissionBasin}
 \end{figure}
@@ -158,10 +160,12 @@ When the magnitude of social learning is sufficiently high, the system is subjec
 % XAVI shall we generate the pdf here?
 \begin{figure}[h!]
   \centering
-      \includegraphics[width=\textwidth]{./figures/figure4.jpg}
+      \includegraphics[width=0.5\textwidth]{./figures/figure4.jpg}
   \caption{Bifurcation diagram for $a$ (red) and $b$ (blue) as a function of social learning ($z$): left: $a=0.11$, $b=0.4$; Middle: $a=0.5$, $b=0.21$, $a=0.4$, $b=0.4$. Model parameters:  $A_a=0.1$; $K_a=0.6$; $A_b=0.2$; $K_b=0.7$; $r_a=r_b=0.05$}
     \label{fig:bifurcationWithTransmission}
 \end{figure}
+
+%ENRICO: Add here basin plot with chaotic system and show tiny difference in initial condition can lead to stable coexistence or chaotic system
 
 
 \subsection{Effects of strategy overlap}
@@ -205,33 +209,19 @@ Figure XX shows a scenario where strategy $a$ is dominant over strategy $b$.
 
 \section{Discussion}
 
-The results 
+% Cooperation / Facilitation / and Niche Construction review ? 
+
+
+Our analysis examined the impact of payoff-based social learning strategies in the evolutionary dynamics of cultural traits with direct and inverse density dependence. The results showed that social learning can alter the basins of attraction of stable nodes, leading to different dynamics and equilibria from the very same initial conditions. When the reliance on social learning is comparatively high, and  the two variants have a substantial overlap in their range of positive payoff (i.e. they share similar critical densities and carrying capacities), we also observe the emergence of a chaotic behaviour where the system fluctuates without reaching a stable equilibria. Our results imply that evolutionary trajectories that are generally expected from a standard two population Allee models can exhibit unexpected outcomes. Variants below critical density can survive and a stable coexistence of strategies above this threshold is not necessarily guaranteed. The effects of social learning can also be observed in the trajectories of these evolutionary dynamics . Reversions to lower densities do not exclusively occur only when the variant is above its carrying capacity, and when the reliance on social learning is high these episodes becomes more frequent and extreme in its magnitude. 
+
+%Not sure where to put competition, maybe the whole thing should be in the appendix?
+
+The implications of our model can provide some insights in the evolutionary history of subsistence traits in human history. Many prime examples of keystone innovations are closely related to the introduction of new subsistence strategies that enabled a larger carrying capacity, often coupled with the cost of higher critical densities. The spread of behavioural traits such as the know-how of the domestication process~\citep{barker2006} the use of new subsistence tools~\citep{petraglia_population_2009} and processing techniques~\citep{molleson1993}, as well as the inclusion/exclusion and extensification/intensification of different prey species are just some of the most notable examples. Both ethnographic and archaeological evidence show many instances where these critical transitions where not smooth, often leading to the coexistence of alternative strategies as well as episodes of a return to a previously abandoned strategies. %PUT HERE LIST of EXAMPLES. 
+While in most cases these are more anecdotal evidence than testable empirical cases, the insights of our models suggests that different levels of reliance on social learning could in fact profoundly drive the system into different trajectories.  These insights can possibly contribute to existing models of subsistence shifts proposed in human behavioural ecology\citep{smith1992,bird2006,kennett2006}, combining its core theoretical framework to the one developed by cultural evolution studies. 
 
 
 
 
-
-%Mention that we need more empirical evidence of Allee effect
-
-
-%General Intro on Human History%
-Major transitions in human history have been marked by the fast spread of key innovations, which laid the foundations of further cumulative development in economy, society, and culture. Shifts in subsistence economy has often been regarded as a prime example of these transitions, triggered by the spread of a suite of behavioural traits such as the know-how of the domestication process~\citep{barker2006} the use of new subsistence tools~\citep{petraglia_population_2009} and processing techniques~\citep{molleson1993}, and the inclusion/exclusion and extensification/intensification of different prey species %citation needed.
-Archaeological evidence does not support a simple progressive adoption of these key cultural variants, and instead a showcase a variety of trajectories, including the long-term coexistence of multiple subsistence strategies, or even reversions to older traits~\citep{rowley2001}.  
-  %add long list of citations. or perhaps one or two concrete examples (probably better)
-\enrico{General Intro on HBE? Not sure if needed for TPB? Maybe move to discussion?}
-Formal models portraying changes in human subsistence have been mostly offered in human behavioral ecology~\citep{smith1992,bird2006,kennett2006}, where several mathematical models inspired from evolutionary ecology %we need a better one-line description of HBE. 
- used to predict  based on expected patterns under the assumption of optimality~\citep{belovsky1988}. 
-While earliest models relied almost exclusively on this assumption, most recent works are increasing discussing how the knowledge of alternative subsistence strategies are acquired %citation needed? Are there such works? Need to check
-and whether this process of learning can drive the evolutionary trajectory of a given population~\citep{henrich1998}, partly as a synergy with the dual inheritance theory~\citep{boyd1985}. 
-
-The results of these works often exhibits counter-intuitive outcomes that cannot be predicted by standard assumptions of optimality. For instance, extreme reliance on social learning can promote information parasitism~\citep{giraldeau2002}, leading to a decline in the proportion of asocial learners that in certain environmental context can have strongly detrimental effects at the population level~\citep{whitehead2009}. Other examples include instances where a reduced effective population size promotes an increase in random drift, and the ultimate loss of adaptive traits~\citep{henrich2004}, or instances where neutral traits are jointly transmitted together with adaptive ones~\citep{ackland2007}. These examples illustrate how theoretical models based on the dual inheritance theory can extend predictions of the standard optimal foraging theory, integrating dynamics that, at least at a first glance, are regarded as counter-intuitive. 
-
-These include episodes of reversions (e.g. \footnote{citation needed}), where a more recent optimal strategies are abandoned for older suboptimal variants; stable coexistence (e.g. \footnote{citation needed}), where optimal and suboptimal strategies co-exist within a population; and even the complete loss of optimal variants~\citep[e.g.][]{henrich2004}. The evolutionary processes leading to these different outcomes are undoubtedly contingent to local historical dynamics, nonetheless we argue that a simple model of social learning in combination with a positive and negative frequency dependent selection can lead all these equilibria.
-
-
-\enrico{We need to mention that some behaviour might actually enhance the other community (or be detrimental). This can be modelled using a competition coefficient as in~\citep{jang2013}. I don't think we need to explore this but it is definitely worth mentioning!}
-
-\enrico{Mutually exclusive trait, but does not necessarily imply HG vs FA mixture of strategy (say 50\%HG vs 50\%F) can be assumed to be a trait. Perhaps this needs to be mentioned earlier when the model is introduced.}
 
 
 \section{References}
