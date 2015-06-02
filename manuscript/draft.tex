@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{subcaption}
 
 \newcommand{\memo}[2]{\textcolor{#1}{#2}}
 \newcommand{\xavi}[1]{\memo{orange}{xavi: #1\\}}
@@ -164,6 +165,14 @@ When the magnitude of social learning is sufficiently high, the system is subjec
     \label{fig:bifurcationWithTransmission}
 \end{figure}
 
+Small differences in initial conditions can have major consequences in the boundaries between the unstable region and the rest of equilibria. Figure \ref{fig:unstable} shows an example with high value of social learning $z=0.4$, where two scenarios ($j$ and $k$) generate different outcomes from very close initial conditions.
+
+\begin{figure}[h!]
+  \centering
+      \includegraphics[width=\textwidth]{./figures/figureUnstable}   
+      \caption{Basin plot (left) and time series (right) for different initial conditions. Scenario $j$ reaches \emph{coexistence} equilibrium with initial conditions $a_0=0.39; b_0=0.99$. Scenario $k$ follows a limit cycle after 1000 time-steps with initial conditions $a_0=0.4,b_0=1.0$. This pattern is reproduced inside the orange zone of the basin plot.}
+    \label{fig:unstable}
+\end{figure}
 
 \subsection{Effects of strategy overlap}
 % XAVI better title?

@@ -33,9 +33,9 @@ unstableB <- data.frame(step=1:length(unstable$n), pop=unstable$n, strategy='b',
 
 trajectories <- rbind(stableA, stableB, unstableA, unstableB)
 
-pdf('figureUnstable2.pdf', width=10, height=4)
+pdf('figureUnstable2.pdf', width=6, height=6)
 
-ggplot(subset(trajectories, step<1501), aes(x=step, y=pop, col=strategy)) + geom_line() + scale_color_manual(values=c('red','blue')) + facet_wrap(~equilibrium) + theme(legend.position='none') + xlab('time (steps)') + ylab('')
+ggplot(subset(trajectories, step<1501), aes(x=step, y=pop, col=strategy)) + geom_line() + scale_color_manual(values=c('red','blue')) + facet_wrap(~equilibrium, nrow=2) + theme(legend.position='none') + xlab('time (steps)') + ylab('')
 
 dev.off()
 
