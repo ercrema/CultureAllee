@@ -183,32 +183,18 @@ High reliance on social learning thus generates a new basin of attraction ... %N
 
 The analyses of the previous section suggest that maximum proportion of population that can switch strategies (i.e. the $z$ parameter) has major effects on the final equilibria (c.f. fig.\ref{fig:bifurcationWithTransmission}). However, this will also depend on the key parameters defining the range of positive payoff for the two strategies (i.e. $[A_a,K_a]$ and $[A_b,K_b]$). While a comprehensive analysis is not possible, here we illustrate the relationship between these parameters and $z$ by introducing a new parameter $\lambda \in (0,1)$ adding the following constraints to equation \eqref{eq1}: 
 %I slightly revised your intro here. Mainly because this reads as if changes depends on the intervals of positive payoff alone, while I think it actually depends on any possibly combination of values. 
+
 \begin{equation}
 \begin{aligned}
 \label{eqOverlap}
-A_b = A_a + \lambda A_a\\
-K_b = K_a + \lambda K_a
+A_b = A_a + (1-\lambda)(K_a-A_a)\\
+K_b = K_a + (1-\lambda)(K_a-A_a)
 \end{aligned}
 \end{equation}
-
-%ENRICO:
-%I'm a bit confused by \eqref{eqOverlap}. Clearly lambda is no longer a measure of overlap percentage, as when lambda=0 we have identical strategy, but when lambda=1 we can have a variety of patterns depending on what you have at A_a and K_a. For example if you have A_a=3 and K_a=5, you will get A_b=6 and K_b=10, thus no overlap between the two strategies. But if you have A_a=1 and K_a=5, then you will have A_b=2, and K_b=10 which implies an almost complete overlap. Besides this approach does not hold the differences constant. I thought you did:
-
-% \begin{equation}
-%\begin{aligned}
-%\label{eqOverlap}
-%A_b = A_a + (1-\lambda A_a)(K_a-A_a)\\
-%K_b = K_a + (1-\lambda A_a)(K_a-A_a)
-%\end{aligned}
-% \end{equation}
-
-%which would instead give, with lambda=0 this time, A_a=3 K_a=5 A_b=5, K_b=7 for the first example, and  A_a=1 K_a=5 A_b=5, K_b=9 for the second. 
 
 The dynamics of two strategies are similar for low values of $\lambda$. High values indicate that the minimum number of individuals needed to achieve positive fitness in $b$ gets closer to $K_a$, while the population size that $b$ can sustain also grows. 
 
 As a consequence, the number of individuals switching strategies when $b$ has lower payoff is also higher and could potentially overload $a$ due to its lower $K_a$.
-
-
 
 Figure \ref{fig:overlap} shows how the degree of overlap affects the equilibria of our model with and without social learning. The relation between the two processes strongly affects the extent of the different basins in a non-dynamic fashion.
 %I've put "extent" instead of "shape" as we are not directly assessing the latter. Also I would omit "strongly".
@@ -224,9 +210,6 @@ Figure \ref{fig:overlap} shows how the degree of overlap affects the equilibria 
 \end{figure*}
 
 Figure \ref{fig:percentages} explores in deeper detail the effects of both parameters ($z$ and $lambda$) on the basin of each equilibria. An increase in $z$ decreases the possibility of having coexistence for high similarity between strategies $a$ and $b$ (i.e. $\lambda \geq 0.9$. From $0.9 < \lambda < 0.55$ the dynamics remain remarkably similar, while for $\lambda = 0.5$ the effects of social learning decreases because of the large gap between $A$ and $K$ of both strategies.
-
-%Ok this reads more like my interpretation of lambda.. 
-
 
 \begin{figure*}
   \centering
