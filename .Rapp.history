@@ -1,0 +1,1739 @@
+hist(rbeta(5000,10,10)-0.5)
+hist(rbeta(5000,50,50)-0.5)
+hist(rbeta(5000,1,1)-0.5)
+hist(rbeta(5000,1,5)-0.5)
+hist(rbeta(5000,1,10)-0.5)
+rgamma(1000,2)
+NewArgs=c(2742,3938,4008,4099,4477,4904,4984,5022,5023,5024,5031,5086,5092,5099,5409,5778,6048,6049,6152,6988,9986); Args=NewArgs[Args]
+NewArgs=c(2742,3938,4008,4099,4477,4904,4984,5022,5023,5024,5031,5086,5092,5099,5409,5778,6048,6049,6152,6988,9986);
+length(NewArgs)
+cases=16#
+probs=runif(cases,0,1)#
+nonprobs=1-p#
+theList<-vector("list",length=cases)#
+theList2<-vector("list",length=cases)#
+#
+for (x in 1:cases)#
+{#
+	theList[[x]]=c(probs[x],1-probs[x])#
+	theList2[[x]]=c(1,0)#
+#
+}#
+result=apply(expand.grid(theList),1,prod)#
+result2=expand.grid(theList2)#
+type=c(rep("a",9),rep("b",9))#
+sizes=c(rnorm(9,mean=2,sd=1),rnorm(9,mean=3,sd=1.5))#
+pval<-numeric(length=length(result))#
+for (x in 1:nrow(result2))#
+{#
+print(x)#
+i=which(result2[x,]==1)#
+tmp.type=type[i]#
+tmp.sizes=sizes[i]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+pval[x]=NA#
+if (length(as)>1&length(bs)>1)#
+{#
+pval [x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+#
+}#
+#
+}#
+sum(pval*result)
+sum(pval*result,na.rm=T)
+runif(length(probs))
+which(probs<runif(length(probs)))
+probs
+nsim=1000#
+pvalSim=numeric(length=nsim)#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+}#
+}
+mean(pvalSim)
+mean(pvalSim,na.rm=TURUE)
+mean(pvalSim,na.rm=TRUE)
+sum(pval*result,na.rm=T)
+########
+nsim=10000#
+pvalSim=numeric(length=nsim)#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+}#
+mean(pvalSim,na.rm=TRUE)
+nsim=50000#
+pvalSim=numeric(length=nsim)#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+}#
+mean(pvalSim,na.rm=TRUE)
+sum(pval*result,na.rm=T)
+cases=16#
+probs=runif(cases,0,1)#
+nonprobs=1-p#
+theList<-vector("list",length=cases)#
+theList2<-vector("list",length=cases)#
+#
+for (x in 1:cases)#
+{#
+	theList[[x]]=c(probs[x],1-probs[x])#
+	theList2[[x]]=c(1,0)#
+#
+}#
+result=apply(expand.grid(theList),1,prod)#
+result2=expand.grid(theList2)#
+type=c(rep("a",9),rep("b",9))#
+sizes=c(rnorm(9,mean=2,sd=1),rnorm(9,mean=3.4,sd=1.5))#
+pval<-numeric(length=length(result))#
+for (x in 1:nrow(result2))#
+{#
+#print(x)#
+i=which(result2[x,]==1)#
+tmp.type=type[i]#
+tmp.sizes=sizes[i]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+pval[x]=NA#
+if (length(as)>1&length(bs)>1)#
+{#
+pval [x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+#
+}#
+#
+}#
+sum(pval*result,na.rm=T)#
+#
+##########
+nsim=50000#
+pvalSim=numeric(length=nsim)#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+}#
+mean(pvalSim,na.rm=TRUE)
+cases=16#
+probs=runif(cases,0,1)#
+nonprobs=1-probs#
+theList<-vector("list",length=cases)#
+theList2<-vector("list",length=cases)#
+#
+for (x in 1:cases)#
+{#
+	theList[[x]]=c(probs[x],1-probs[x])#
+	theList2[[x]]=c(1,0)#
+#
+}#
+result=apply(expand.grid(theList),1,prod)#
+result2=expand.grid(theList2)#
+type=c(rep("a",9),rep("b",9))#
+sizes=c(rnorm(9,mean=2,sd=1),rnorm(9,mean=3.4,sd=1.5))#
+pval<-numeric(length=length(result))#
+for (x in 1:nrow(result2))#
+{#
+#print(x)#
+i=which(result2[x,]==1)#
+tmp.type=type[i]#
+tmp.sizes=sizes[i]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+pval[x]=NA#
+if (length(as)>1&length(bs)>1)#
+{#
+pval [x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+#
+}#
+#
+}#
+sum(pval*result,na.rm=T)#
+#
+##########
+nsim=50000#
+pvalSim=numeric(length=nsim)#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+}#
+mean(pvalSim,na.rm=TRUE)
+nsim=50000#
+pvalSim=numeric(length=nsim)#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+}#
+mean(pvalSim,na.rm=TRUE)
+cases=16#
+probs=runif(cases,0,1)#
+nonprobs=1-probs#
+theList<-vector("list",length=cases)#
+theList2<-vector("list",length=cases)#
+#
+for (x in 1:cases)#
+{#
+	theList[[x]]=c(probs[x],1-probs[x])#
+	theList2[[x]]=c(1,0)#
+#
+}#
+result=apply(expand.grid(theList),1,prod)#
+result2=expand.grid(theList2)#
+type=c(rep("a",9),rep("b",9))#
+sizes=c(rnorm(9,mean=2,sd=1),rnorm(9,mean=3.4,sd=1.5))#
+pval<-numeric(length=length(result))#
+for (x in 1:nrow(result2))#
+{#
+#print(x)#
+i=which(result2[x,]==1)#
+tmp.type=type[i]#
+tmp.sizes=sizes[i]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+pval[x]=NA#
+if (length(as)>1&length(bs)>1)#
+{#
+pval [x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+#
+}#
+#
+}#
+sum(pval*result,na.rm=T)#
+#
+##########
+nsim=50000#
+pvalSim=numeric(length=nsim)#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+}#
+mean(pvalSim,na.rm=TRUE)
+probs
+hist(result)
+hist(pvalSim)
+hist(pval)
+sum(pvalSim)/nsim
+sum(pvalSim,na.rm=T)/nsim
+sum(pval,na.rm=T)/nsim
+sum(pval,na.rm=T)/length(pval)
+mean(pval,na.rm=T)
+hist(pval)
+sum(pval*1/length(result),na.rm=T)
+sum(pval*result,na.rm=T)
+mean(pvalSim,na.rm=TRUE)
+https://answers.yahoo.com/question/index?qid=20090406052900AAFeMnF#
+cases=16#
+probs=runif(cases,0,1)#
+nonprobs=1-probs#
+theList<-vector("list",length=cases)#
+theList2<-vector("list",length=cases)#
+#
+for (x in 1:cases)#
+{#
+	theList[[x]]=c(probs[x],1-probs[x])#
+	theList2[[x]]=c(1,0)#
+#
+}#
+result=apply(expand.grid(theList),1,prod)#
+result2=expand.grid(theList2)#
+type=c(rep("a",9),rep("b",9))#
+sizes=c(rnorm(9,mean=2,sd=1),rnorm(9,mean=3.4,sd=1.5))#
+pval<-numeric(length=length(result))#
+Avgs<-numeric(length=length(result))#
+for (x in 1:nrow(result2))#
+{#
+#print(x)#
+i=which(result2[x,]==1)#
+tmp.type=type[i]#
+tmp.sizes=sizes[i]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+pval[x]=NA#
+if (length(as)>1&length(bs)>1)#
+{#
+pval [x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+Avgs[x]=mean(tmp.sizes[as])#
+}#
+sum(pval*result,na.rm=T)#
+sum(pval*1/length(result),na.rm=T)#
+#
+##########
+nsim=50000#
+pvalSim=numeric(length=nsim)#
+AvgsSim<-=numeric(length=nsim)#
+#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+AvgsSim[x]=mean(tmp.sizes[as])#
+}#
+mean(pvalSim,na.rm=TRUE)
+nsim=50000#
+pvalSim=numeric(length=nsim)#
+AvgsSim<-numeric(length=nsim)#
+#
+for (x in 1:nsim)#
+    {#
+index=which(probs<runif(length(probs)))#
+tmp.type=type[index]#
+tmp.sizes=sizes[index]#
+as=which(tmp.type=="a")#
+bs=which(tmp.type=="b")#
+if (length(as)>1&length(bs)>1)#
+{#
+    pvalSim[x]=t.test(x=tmp.sizes[as],y=tmp.sizes[bs])$p.value#
+}#
+else{pvalSim[x]=NA}#
+AvgsSim[x]=mean(tmp.sizes[as])#
+}#
+mean(pvalSim,na.rm=TRUE)#
+mean(AvgsSim,na.rm=TRUE)
+sum(Avgs*result,na.rm=T)
+mean(AvgsSim,na.rm=TRUE)
+mean(Avgs)
+mean(Avgs,na.rm=T)
+hist(Avgs)
+hist(AvgsSim)
+allee<-function(r.n=0.005,r.m=0.005,ini.m=0.6,ini.n=0.8,Am=0.2,Km=0.7,An=0.5,Kn=1,z=0,timeSteps=2000,b=2,storeFinalOnly=FALSE,cAm=-0.2,cAn=0.2,cKn=0.2,cKm=-0.2)#
+{#
+# Create Output Vectors:#
+    m<-numeric(length=timeSteps)#
+    n<-numeric(length=timeSteps)#
+    m[1]=ini.m#
+    n[1]=ini.n#
+#
+# Define DELTA#
+    DELTA=max(r.n*((Am-Km)^2/(4*Am*Km)),r.m*((An-Kn)^2/(4*An*Kn)))#
+# Compute Simulation#
+for (t in 2:timeSteps)#
+    {#
+#
+     #intrinsic growth rates#
+     Rm=r.m*((m[t-1]-cAn*n[t-1])/Am-1)*(1-(m[t-1]+cKn*n[t-1])/Km)#
+     Rn=r.n*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)#
+#transmission rates#
+#
+     if (m[t-1]>0|n[t-1]>0)#
+         {#
+             if (abs(Rm-Rn)>=(b*DELTA)) {zeta=z}#
+             if (abs(Rm-Rn)<(b*DELTA)) {zeta=z*abs(Rm-Rn)/(b*DELTA)}#
+         }#
+     else#
+         {#
+             zeta=0#
+         }#
+#switch function#
+     if (Rm==Rn) {C=0} #No transmission#
+     if(Rm>Rn) {C=zeta*(n[t-1])} # The proportion moving is a function of the updated population size#
+     if (Rn>Rm) {C=-zeta*(m[t-1])} # The proportion moving is a function of the updated population size#
+#transmission(migration)#
+# This is essentially population of the previous steps + population increasing through reproduction, and population moving after transmission (post-reproduction).      #
+     m[t]=m[t-1] + C#
+     n[t]=n[t-1] - C#
+#
+# This is to avoid unecessary computational time     #
+     if((abs(m[t]-m[t-1])==0)&(abs(n[t]-n[t-1])==0))#
+         {#
+             #print(t)#
+             m[t:timeSteps]=m[t]#
+             n[t:timeSteps]=n[t]#
+             break()#
+         }#
+# Avoid Negative Computation#
+     if (m[t]<0){m[t]=0}#
+     if (n[t]<0){n[t]=0}#
+ }#
+    if (storeFinalOnly==FALSE)#
+        {return(list(m=m,n=n))}#
+    if (storeFinalOnly==TRUE)#
+        {return(c(m=m[t],n=n[t]))}    #
+}
+allee()
+allee(z=0.1)
+allee(ini.m=0.4,ini.n=0.6)
+allee(ini.m=0.5,ini.n=0.5)
+allee(ini.m=0.5,ini.n=0.5,z=0.1)
+allee(ini.m=0.5,ini.n=0.5,z=0.2)
+allee(ini.m=0.5,ini.n=0.5,z=0.5)
+allee(ini.m=0.5,ini.n=0.5,z=0.1)
+allee(ini.m=0.5,ini.n=0.5,z=0.01)
+allee(ini.m=0.5,ini.n=0.5,z=0.1)
+allee(ini.m=0.5,ini.n=0.5,z=1)
+allee(ini.m=0.5,ini.n=0.5,z=0.8)
+allee(ini.m=0.4,ini.n=0.6,z=0.8)
+allee(ini.m=0.4,ini.n=0.6,z=0.3)
+allee(ini.m=0.4,ini.n=0.6,z=0.1)
+#Utility Functions##
+#
+#Calculate Expected m and n stable attractor node for m>0 and n>0 (close to carrying capacity):#
+#
+ExpStableNode=function(Kn,Km,cKn,cKm)#
+    {#
+         m=(Km-cKn*Kn)/(1-cKn*cKm)#
+         n=(cKm*Km-Kn)/(cKm*cKn-1)#
+         return(list(m=m,n=n))#
+    }#
+#
+#Calculate Expected m and n unstable attractor node for m>0 and n>0 (close to Allee Effect):#
+#
+ExpUnStableNode=function(An,Am,cAn,cAm)#
+    {#
+         m=(cAn*An+Am)/(1-cAn*cAm)#
+         n=(cAm*Am+An)/(1-cAn*cAm)#
+         return(list(m=m,n=n))#
+    }#
+#Calculate parameter g, that equalises the max fitness of the two strategies#
+EqualiseMaxGrowthRate=function(An,Am,Kn,Km)#
+{#
+    g=(((Am/Km+1)/2/(Am/Km)-1)*(1-((Am/Km+1)/2)))/#
+        (((An/Kn+1)/2/(An/Kn)-1)*(1-((An/Kn+1)/2)))#
+    return(g)#
+    # Rm=Rn*g to make the two max intrisic growth rates equal#
+}
+source('~/github/CultureAllee/src/basin.R', chdir = TRUE)
+trajPlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0)
+trajPlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0)
+trajPlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+allee(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+allee(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+trajPlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+baseplot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.1,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+Km=0.4
+Kn=0.8
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0,cAm=0,cAn=0,cKn=0,cKm=0,z=0.1)
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.1,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.5,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.2,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.3,ini.n=0.7,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.2,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.4,ini.n=0.6,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.2,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.5,ini.n=0.6,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.2,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.5,ini.n=0.5,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.2,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.5,ini.n=0.5,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.5,ini.n=0.5,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.05,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.5,ini.n=0.5,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.2,ini.n=0.5,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.2,ini.n=0.8,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.5,ini.n=0.5,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.2,ini.n=0.8,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.5,ini.n=0.5,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.2,ini.n=0.8,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.1,ini.n=0.8,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.05,ini.n=0.8,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.11,ini.n=0.8,Am=0.1,An=0.4,Km=0.4,Kn=0.8,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.11,ini.n=0.8,Am=0.1,An=0.5,Km=0.4,Kn=1,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.6,ini.n=0.4,Am=0.1,An=0.5,Km=0.4,Kn=1,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.7,ini.n=0.3,Am=0.1,An=0.5,Km=0.4,Kn=1,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+basePlot(ini.m=0.9,ini.n=0.1,Am=0.1,An=0.5,Km=0.4,Kn=1,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+allee(ini.m=0.9,ini.n=0.1,Am=0.1,An=0.5,Km=0.4,Kn=1,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+a=allee(ini.m=0.9,ini.n=0.1,Am=0.1,An=0.5,Km=0.4,Kn=1,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+a$m[2000]+a$n[2000]
+allee(ini.m=0.9,ini.n=0.1,Am=0.1,An=0.5,Km=0.4,Kn=1,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+allee(ini.m=0.9,ini.n=0.1,Am=0.1,An=0.5,Km=0.4,Kn=1,z=0.01,cAm=0,cAn=0,cKn=0,cKm=0)
+setwd("./github/")
+setwd("./github/CultureAlee")
+setwd("~/github/CultureAlee")
+setwd("./CultureAllee/")
+source('~/github/CultureAllee/src/alleeNoGrowth.R', chdir = TRUE)
+source('~/github/CultureAllee/src/basin.R', chdir = TRUE)
+Km=1#
+Kn=1#
+An=0.2#
+Am=0.2#
+z=0#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0
+res001=basin(x.lim=x.lim,y.lim=x.lim,cores=5,points=40,timeSteps=1000,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,verbose=TRUE)
+res001=basin(x.lim=x.lim,y.lim=x.lim,cores=1,points=30,timeSteps=1000,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,verbose=TRUE,multicore=FALSE)
+res001
+res001=basin(x.lim=x.lim,y.lim=x.lim,cores=1,points=40,timeSteps=2000,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,verbose=TRUE,multicore=FALSE)
+res001
+res001=basin(x.lim=x.lim,y.lim=x.lim,cores=1,points=40,timeSteps=5000,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,verbose=TRUE,multicore=FALSE)
+res001
+basePlot
+allee()
+Km=1#
+Kn=1#
+An=0.2#
+Am=0.2#
+z=0#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.01)
+X
+x=3
+allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2)
+allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,z=0.1)
+allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=0.1,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2)
+allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=0.1,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)
+allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=0.1,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]
+allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=0.1,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]
+Km=1#
+Kn=1#
+An=0.2#
+Am=0.2#
+z=0.1#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.01)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+    }
+plot(X~Xends)
+z
+z=0.5
+Km=1#
+Kn=1#
+An=0.2#
+Am=0.2#
+z=0.1#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.01)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+    }
+Km=1#
+Kn=1#
+An=0.2#
+Am=0.2#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.01)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+    }
+plot(X,Xends,type="l")
+abline(a=0,b=1)
+abline(a=0,b=1,type="l")
+abline(a=0,b=1,lty=2)
+abline(a=0,b=1,lty=2)
+abline(a=0,b=1,lty=2)
+Km=1#
+Kn=1#
+An=0.2#
+Am=0.2#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.01)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+    }#
+abline(a=0,b=1,lty=2)
+Km=1#
+Kn=1#
+An=0.2#
+Am=0.2#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.01)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l")#
+abline(a=0,b=1,lty=2)
+Km=1.3#
+Kn=1#
+An=0.2#
+Am=0.4#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1.5,0.01)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l")#
+abline(a=0,b=1,lty=2)
+Km=1.3#
+Kn=1#
+An=0.2#
+Am=0.4#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,max(X)),ylim=c(0,max(X)))#
+abline(a=0,b=1,lty=2)
+Km=1.3#
+Kn=1#
+An=0.2#
+Am=0.4#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,max(X)),ylim=c(0,max(X)),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+Km=0.5#
+Kn=0.4#
+An=0.1#
+Am=1#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,max(X)),ylim=c(0,max(X)),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+z=0
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,max(X)),ylim=c(0,max(X)),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+z=0.01
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,max(X)),ylim=c(0,max(X)),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+z=0.2
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,max(X)),ylim=c(0,max(X)),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+x=1
+X[x]
+allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]
+allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)
+allee<-function(r.n=0.005,r.m=0.005,ini.m=0.6,ini.n=0.8,Am=0.2,Km=0.7,An=0.5,Kn=1,z=0,timeSteps=2000,b=2,storeFinalOnly=FALSE,cAm=-0.2,cAn=0.2,cKn=0.2,cKm=-0.2)#
+{#
+# Create Output Vectors:#
+    m<-numeric(length=timeSteps)#
+    n<-numeric(length=timeSteps)#
+    m[1]=ini.m#
+    n[1]=ini.n#
+#
+# Define DELTA#
+    DELTA=max(r.n*((Am-Km)^2/(4*Am*Km)),r.m*((An-Kn)^2/(4*An*Kn)))#
+# Compute Simulation#
+for (t in 2:timeSteps)#
+    {#
+#
+     #intrinsic growth rates#
+     Rm=r.m*((m[t-1]-cAn*n[t-1])/Am-1)*(1-(m[t-1]+cKn*n[t-1])/Km)#
+     Rn=r.n*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)#
+#transmission rates#
+#
+     if (m[t-1]>0|n[t-1]>0)#
+         {#
+             if (abs(Rm-Rn)>=(b*DELTA)) {zeta=z}#
+             if (abs(Rm-Rn)<(b*DELTA)) {zeta=z*abs(Rm-Rn)/(b*DELTA)}#
+         }#
+     else#
+         {#
+             zeta=0#
+         }#
+#switch function#
+     if (Rm==Rn) {C=0} #No transmission#
+     if(Rm>Rn) {C=zeta*(n[t-1])} # The proportion moving is a function of the updated population size#
+     if (Rn>Rm) {C=-zeta*(m[t-1])} # The proportion moving is a function of the updated population size#
+#transmission(migration)#
+# This is essentially population of the previous steps + population increasing through reproduction, and population moving after transmission (post-reproduction).      #
+     m[t]=m[t-1] + C#
+     n[t]=n[t-1] - C#
+#
+# This is to avoid unecessary computational time     #
+     if((abs(m[t]-m[t-1])==0)&(abs(n[t]-n[t-1])==0))#
+         {#
+             #print(t)#
+             m[t:timeSteps]=m[t]#
+             n[t:timeSteps]=n[t]#
+             break()#
+         }#
+# Avoid Negative Computation#
+     if (m[t]<0){m[t]=0}#
+     if (n[t]<0){n[t]=0}#
+ }#
+    if (storeFinalOnly==FALSE)#
+        {return(list(m=m,n=n))}#
+    if (storeFinalOnly==TRUE)#
+        {return(c(m=m[t],n=n[t]))}    #
+}
+allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)
+X[x]
+1-X[x]
+ini.n=1-X[x]
+m<-numeric(length=timeSteps)#
+    n<-numeric(length=timeSteps)#
+    m[1]=ini.m#
+    n[1]=ini.n
+ini.m=X[x]
+ini.n=1-X[x]
+m<-numeric(length=timeSteps)#
+    n<-numeric(length=timeSteps)#
+    m[1]=ini.m#
+    n[1]=ini.n
+m
+n
+DELTA=max(r.n*((Am-Km)^2/(4*Am*Km)),r.m*((An-Kn)^2/(4*An*Kn)))
+DELTA
+Rm=r.m*((m[t-1]-cAn*n[t-1])/Am-1)*(1-(m[t-1]+cKn*n[t-1])/Km)
+Rm
+Rn=r.n*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)
+Rn
+Rm
+Rm=r.m*((m[t-1]-cAn*n[t-1])/Am-1)*(1-(m[t-1]+cKn*n[t-1])/Km)
+Rm
+Rn=r.n*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)
+Rn
+cAn
+Ckn
+t
+t=1
+t=2
+Rm=r.m*((m[t-1]-cAn*n[t-1])/Am-1)*(1-(m[t-1]+cKn*n[t-1])/Km)#
+     Rn=r.n*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)
+Rm
+Rn
+m[t-1]>0|n[t-1]>0
+allee<-function(r.n=0.005,r.m=0.005,ini.m=0.6,ini.n=0.8,Am=0.2,Km=0.7,An=0.5,Kn=1,z=0,timeSteps=2000,b=2,storeFinalOnly=FALSE,cAm=-0.2,cAn=0.2,cKn=0.2,cKm=-0.2)#
+{#
+# Create Output Vectors:#
+    m<-numeric(length=timeSteps)#
+    n<-numeric(length=timeSteps)#
+    m[1]=ini.m#
+    n[1]=ini.n#
+#
+# Define DELTA#
+    DELTA=max(r.n*((Am-Km)^2/(4*Am*Km)),r.m*((An-Kn)^2/(4*An*Kn)))#
+# Compute Simulation#
+for (t in 2:timeSteps)#
+    {#
+#
+     #intrinsic growth rates#
+     Rm=r.m*((m[t-1]-cAn*n[t-1])/Am-1)*(1-(m[t-1]+cKn*n[t-1])/Km)#
+     Rn=r.n*((n[t-1]-cAm*m[t-1])/An-1)*(1-(n[t-1]+cKm*m[t-1])/Kn)#
+#transmission rates#
+#
+     if (m[t-1]>0&n[t-1]>0)#
+         {#
+             if (abs(Rm-Rn)>=(b*DELTA)) {zeta=z}#
+             if (abs(Rm-Rn)<(b*DELTA)) {zeta=z*abs(Rm-Rn)/(b*DELTA)}#
+         }#
+     else#
+         {#
+             zeta=0#
+         }#
+#switch function#
+     if (Rm==Rn) {C=0} #No transmission#
+     if(Rm>Rn) {C=zeta*(n[t-1])} # The proportion moving is a function of the updated population size#
+     if (Rn>Rm) {C=-zeta*(m[t-1])} # The proportion moving is a function of the updated population size#
+#transmission(migration)#
+# This is essentially population of the previous steps + population increasing through reproduction, and population moving after transmission (post-reproduction).      #
+     m[t]=m[t-1] + C#
+     n[t]=n[t-1] - C#
+#
+# This is to avoid unecessary computational time     #
+     if((abs(m[t]-m[t-1])==0)&(abs(n[t]-n[t-1])==0))#
+         {#
+             #print(t)#
+             m[t:timeSteps]=m[t]#
+             n[t:timeSteps]=n[t]#
+             break()#
+         }#
+# Avoid Negative Computation#
+     if (m[t]<0){m[t]=0}#
+     if (n[t]<0){n[t]=0}#
+ }#
+    if (storeFinalOnly==FALSE)#
+        {return(list(m=m,n=n))}#
+    if (storeFinalOnly==TRUE)#
+        {return(c(m=m[t],n=n[t]))}    #
+}
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,max(X)),ylim=c(0,max(X)),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An,Km,Kn),col="lighytgrey",lty=3)#
+abline(h=c(Am,An,Km,Kn),col="lighytgrey",lty=3)
+abline(v=c(Am,An,Km,Kn),col="lightgrey",lty=3)#
+abline(h=c(Am,An,Km,Kn),col="lightgrey",lty=3)
+Km=0.7#
+Kn=0.4#
+An=0.1#
+Am=0.3#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1.5,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An,Km,Kn),col="lightgrey",lty=3)#
+abline(h=c(Am,An,Km,Kn),col="lightgrey",lty=3)
+Km=0.7#
+Kn=0.4#
+An=0.1#
+Am=0.3#
+z=0.1#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An,Km,Kn),col="lightgrey",lty=3)#
+abline(h=c(Am,An,Km,Kn),col="lightgrey",lty=3)
+Km=0.7#
+Kn=0.4#
+An=0.1#
+Am=0.3#
+z=0.4#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An,Km,Kn),col="lightgrey",lty=3)#
+abline(h=c(Am,An,Km,Kn),col="lightgrey",lty=3)
+Km=0.8#
+Kn=0.4#
+An=0.1#
+Am=0.3#
+z=0.4#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.1#
+Kn=0.5#
+Am=0.6#
+Km=1#
+#
+z=0.4#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.1#
+Kn=0.5#
+Am=0.6#
+Km=1#
+#
+z=0.05#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.1#
+Kn=0.5#
+Am=0.6#
+Km=1#
+#
+z=0.2#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+       Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+Xends
+which(Xend==X)
+match(Xend==X)
+match(Xend,X)
+which(c(Xend-X)==0)
+which(c(Xends-X)==0)
+X=seq(0,1,0.0001)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)#
+#
+which(c(Xends-X)==0)
+locator()
+basePlot(r.m=0.5,r.n=0.5,ini.m=0.4,ini.n=1-0.4,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2000)
+basePlot(r.m=0.5,r.n=0.5,ini.m=0.4,ini.n=1-0.4,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=200)
+basePlot(r.m=0.5,r.n=0.5,ini.m=0.4,ini.n=1-0.4,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+a=0.2#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+a=0.5#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+a=0.56#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+a=0.6#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+a=0.4#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+a=0.8#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+a=1#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+a=0.9#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+a=0.8#
+basePlot(r.m=0.5,r.n=0.5,ini.m=a,ini.n=1-a,Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=100)
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.1#
+Kn=0.3#
+Am=0.5#
+Km=0.8#
+#
+z=0.2#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.6#
+Am=0.2#
+Km=0.6#
+#
+z=0.2#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.6#
+Am=0.2#
+Km=0.6#
+#
+z=0.2#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.05,r.n=0.05,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.6#
+Am=0.2#
+Km=0.6#
+#
+z=0.2#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.005,r.n=0.005,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.6#
+Am=0.2#
+Km=0.6#
+#
+z=0.2#
+r.n=0.005#
+r.m=r.n#
+x.lim=c(0,1.2)#
+y.lim=c(0,1.2)#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.005,r.n=0.005,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+#
+z=0.01#
+r.n=0.005#
+r.m=r.n#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.005,r.n=0.005,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+#
+z=0.05#
+r.n=0.005#
+r.m=r.n#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.005,r.n=0.005,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+#
+z=0.5#
+r.n=0.005#
+r.m=r.n#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.005,r.n=0.005,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+#
+z=0.9#
+r.n=0.005#
+r.m=r.n#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.005,r.n=0.005,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.8#
+Am=0.2#
+Km=0.8#
+#
+z=0.9#
+r.n=0.005#
+r.m=r.n#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.005,r.n=0.005,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.8#
+Am=0.2#
+Km=0.8#
+#
+z=0.9#
+r.n=0.005#
+r.m=r.n#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.005,r.n=0.005,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.8#
+Am=0.2#
+Km=0.8#
+#
+z=0.9#
+r.n=0.005#
+r.m=r.n#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+z=0.9#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.4#
+Kn=0.9#
+Am=0.4#
+Km=0.9#
+z=0.9#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.3#
+Kn=0.9#
+Am=0.3#
+Km=0.9#
+z=0.9#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.25#
+Kn=0.9#
+Am=0.25#
+Km=0.9#
+z=0.9#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.2#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+z=0.9#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.1#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+z=0.9#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=0.5,r.n=0.5,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)#
+abline(v=c(Am,An),col="lightgrey",lty=3)#
+abline(h=c(Am,An),col="lightgrey",lty=3)
+An=0.1#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+z=0.9#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+r.n=1#
+r.m=EqualiseMaxGrowthRate(An=An,Am=Am,Kn=Kn,Km=Km)*r.n#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=r.m,r.n=r.n,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+An=0.1#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+z=0.01#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+r.n=1#
+r.m=EqualiseMaxGrowthRate(An=An,Am=Am,Kn=Kn,Km=Km)*r.n#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=r.m,r.n=r.n,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+An=0.1#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+z=0.2#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+r.n=1#
+r.m=EqualiseMaxGrowthRate(An=An,Am=Am,Kn=Kn,Km=Km)*r.n#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=r.m,r.n=r.n,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+An=0.1#
+Kn=0.9#
+Am=0.2#
+Km=0.9#
+z=0.2#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+r.n=0.05#
+r.m=EqualiseMaxGrowthRate(An=An,Am=Am,Kn=Kn,Km=Km)*r.n#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=r.m,r.n=r.n,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
+An=0.1#
+Kn=0.4#
+Am=0.5#
+Km=0.9#
+z=0.2#
+cAn=0#
+cAm=0#
+cKn=0#
+cKm=0#
+r.n=0.05#
+r.m=EqualiseMaxGrowthRate(An=An,Am=Am,Kn=Kn,Km=Km)*r.n#
+#
+X=seq(0,1,0.005)#
+Xends=numeric()#
+#
+for (x in 1:length(X))#
+    {#
+        Xends[x]=allee(r.m=r.m,r.n=r.n,ini.m=X[x],ini.n=1-X[x],Am=Am,An=An,Km=Km,Kn,Kn,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,timeSteps=2,storeFinalOnly=TRUE)[[1]]#
+   }#
+plot(X,Xends,type="l",xlim=c(0,1),ylim=c(0,1),xlab="a(t)",ylab="a(t+1)")#
+abline(a=0,b=1,lty=2)
