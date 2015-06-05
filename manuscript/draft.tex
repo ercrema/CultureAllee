@@ -88,7 +88,9 @@ R_{b,t}& = r_b (\frac{b_t}{A_b}-1)(1-\frac{b_t}{K_b})
 
 where $r$ is the basic growth rate, $A$ is the critical density and $K$ is the carrying capacity, following the condition $0<A < K$. 
 
-Equation \eqref{eq2} depicts the so called \emph{strong} Allee effect \citep{Wang_and_Kot_2001}, where the reproductive rate is negative when population density is either below $A$ or above $K$, and  in this case reach its maxima $R_{max}=\frac{r(A-K)2}{4AK}$ when density is equal to $\frac{(K-A)}{2}$. 
+Equation \eqref{eq2} depicts the so called \emph{strong} Allee effect \citep{Wang_and_Kot_2001}, where the reproductive rate is negative when population density is either below $A$ or above $K$, and  in this case reach its maxima $R_{max}=\frac{r(A-K)^2}{4AK}$ when density is equal to $\frac{(K-A)}{2}$. 
+
+%Check if $R_{max}=\frac{r(A-K)^2}{4AK}$ this actually true, or is rather $R_{max}=\frac{r(K-A)2}{4AK}$
 
 The cultural transmission component of equation \eqref{eq1} is based on the \emph{proportional imitation rule} \citep{schlag1998}. In this case, the probability of an individual with lower growth rate to adopt the trait of an individual with higher growth rate is proportional to the difference in the growth rates. This is formally portrayed as follows:
 
@@ -161,6 +163,8 @@ When social learning is enabled (i.e. when $z>0$), the stability of the nodes ar
 
 When the magnitude of social learning is sufficiently high, the system is subject to effects similar to an increase in the per capita growth rate $r$, with the consequent decrease in the stability of the fixed points. Figure \ref{fig:bifurcationWithTransmission} shows the bifurcation diagram for three different initial settings of $a$ and $b$. In the first two cases, increase in $z$ leads to a shift of the equilibria, which remains stable even when $z$ is increased. The third case shows, around $z=0.5$ a transition from a point attractor to a system characterised by repeated shifts between the two transmission strategies. 
 
+%This should be changed with the basin plot and the time-series; omit discussion on bifurcation
+
 \begin{figure*}
   \centering
       \includegraphics[width=1\textwidth]{./figures/figure4.jpg}
@@ -169,6 +173,9 @@ When the magnitude of social learning is sufficiently high, the system is subjec
 \end{figure*}
 
 High reliance on social learning thus generates a new basin of attraction ... %Not sure how to link this to the unstability figures. I think we already made the point with the analysis above, and I'm no longer sure what this new plot is ultimately adding (I know, I asked you to make it, sorry!)
+
+Small differences in initial conditions can have major consequences in the boundaries between the unstable region and the rest of equilibria. Figure \ref{fig:unstable} shows an example with high value of social learning $z=0.4$, where two scenarios ($j$ and $k$) generate different outcomes from very close initial conditions.
+
 
 %\begin{figure}
 %  \centering
