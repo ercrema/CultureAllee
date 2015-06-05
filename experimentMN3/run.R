@@ -14,8 +14,7 @@ lambda = as.numeric(args[4])
 # fixed values
 Am=0.2
 Km=0.8
-r.n=0.05
-r.m=r.n
+r.m=0.05
 x.lim=c(0,1.2)
 y.lim=c(0,1.2)
 
@@ -27,6 +26,7 @@ cKm=-competition
 diff = Km-Am
 An=Am + (1-lambda)*diff
 Kn=Km + (1-lambda)*diff
+r.n=r.m*EqualiseMaxGrowthRate(An,Am,Kn,Km)
 
 result <- basin(x.lim=x.lim,y.lim=x.lim,points=300,timeSteps=10000,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,z=z,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,verbose=F,multicore=TRUE,cores=16)
 

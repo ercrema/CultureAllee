@@ -12,6 +12,8 @@ getRawValues <- function(run)
     print(paste('loading:',fileName))
     load(fileName)
 
+    result <- subset(result, ini.m>=Am & ini.m<=Km & ini.n>=An & ini.n<=Kn)
+
     #Identify Stable Attractor Node
     Em=ExpStableNode(Kn,Km,cKn,cKm)$m
     En=ExpStableNode(Kn,Km,cKn,cKm)$n
@@ -46,14 +48,18 @@ getPercentages<- function(raw)
 }
 
 raw <- data.frame()
-for(run in 0:65)
+for(run in 0:77)
 {
     raw <- rbind(raw, getRawValues(run))
 }
 
 percentages <- getPercentages(raw)
+percentages <- subset(percentages, lambda<=1.0)    
+colorValues = c('#006400','#D3D3D3','#4169E1','#CD5C5C','gold2')
 
-plotted <- subset(percentages, lambda>=0.9 | lambda<=0.6)
+#ggplot(percentages, aes(x=z, y=value, fill=eq)) + geom_area(stat='identity') + scale_fill_manual(name='Equilibria', values=colorValues)+ facet_wrap(~lambda)
+
+plotted <- subset(percentages, lambda >=0.9 | lambda<=0.6 )
 plotted$lambda <- factor(plotted$lambda, levels=c(1,0.95,0.9,0.6,0.55,0.5))    
 
 # coexistence: #006400
@@ -61,7 +67,10 @@ plotted$lambda <- factor(plotted$lambda, levels=c(1,0.95,0.9,0.6,0.55,0.5))
 # nExtinct: #4169E1
 # mExtinct: #CD5C5C
 
+# ggplot(percentages, aes(x=z, y=value, fill=eq)) + geom_area(stat="identity") + facet_wrap(~lambda)
 pdf('figure6.pdf', width=10, height=6)
-ggplot(plotted, aes(x=z, y=value, fill=eq)) + geom_area(stat='identity') + scale_fill_manual(name='Equilibria', values=c('#006400','#D3D3D3','#4169E1','#CD5C5C','gold2'))+ facet_wrap(~lambda, nrow=2)
+
+ggplot(plotted, aes(x=z, y=value, fill=eq)) + geom_area(stat='identity') + scale_fill_manual(name='Equilibria', values=colorValues)+ facet_wrap(~lambda, nrow=2)
+
 dev.off()
 
