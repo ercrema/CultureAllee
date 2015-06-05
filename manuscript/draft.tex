@@ -1,6 +1,6 @@
 
-%\documentclass[review,authoryear]{elsarticle}
- \documentclass[3p,authoryear,twocolumn]{elsarticle} %Just to give a feel of how it would look like
+\documentclass[review,authoryear]{elsarticle}
+% \documentclass[3p,authoryear,twocolumn]{elsarticle} %Just to give a feel of how it would look like
 
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
@@ -90,8 +90,6 @@ where $r$ is the basic growth rate, $A$ is the critical density and $K$ is the c
 
 Equation \eqref{eq2} depicts the so called \emph{strong} Allee effect \citep{Wang_and_Kot_2001}, where the reproductive rate is negative when population density is either below $A$ or above $K$, and  in this case reach its maxima $R_{max}=\frac{r(A-K)^2}{4AK}$ when density is equal to $\frac{(K-A)}{2}$. 
 
-%Check if $R_{max}=\frac{r(A-K)^2}{4AK}$ this actually true, or is rather $R_{max}=\frac{r(K-A)2}{4AK}$
-
 The cultural transmission component of equation \eqref{eq1} is based on the \emph{proportional imitation rule} \citep{schlag1998}. In this case, the probability of an individual with lower growth rate to adopt the trait of an individual with higher growth rate is proportional to the difference in the growth rates. This is formally portrayed as follows:
 
 \begin{equation}
@@ -123,28 +121,29 @@ where $z$ is a measure of reliance in social learning (effectively equivalent to
 
 \section{Results}
 
-We investigate the equilibrium conditions for different initial population sizes of  $a$ and $b$ and different settings of $z$, $A$, and $K$, assuming that  $r_a=r_b$, and for convenience holding the condition $K_b \geq K_a$. Given that equations \ref{eq1}-\ref{eq4} have no analytical solution, we identified equilibrium conditions via simulation (see appendix 1 for details; source code can be found on the following repository %put link here
-as well as in the ESM).  
-%if the points we need to reiterate are short, perhaps a footnote will suffice instead of an appendix? 
-% 100,000 iterations 
-% basin plots resolution
+We investigate the equilibrium conditions for different initial population sizes of $a$ and $b$ and different settings of $z$, $A$, and $K$, ensuring that in all cases $K_b \geq K_a$. We assumed that two strategies differed only in their critical densities and carrying capacities but not on their intrinsic payoffs. To achieve this we set $r_b=\rho r_a$, where $\rho$ is a constant\footnote{Given two variants with the same baseline growth rate (i.e. $r_a=r_b$), equation \eqref{eq2} result into a lower $R$ for the variant with higher $A$ and $K$. In order to avoid this we increased the baseline of the strategy with lower $R$ by a factor $\rho$, given by the following equation:
+\begin{align*}
+\rho=\frac{A_bK_b(K_a-A_a)^2}{A_aK_a(A_b-K_b)^2}
+\end{align*}
+  } 
+that ensures that the two variants have always the same $R_{max}$. Given that equations \ref{eq1}-\ref{eq4} have no analytical solution, we identified equilibrium conditions via simulation (source codes of the simulation can be found on the following repository \textcolor{red}{PUT LINK HERE})
 
 \subsection{Equilibrium conditions without social learning}
 
-When $z=0$, equations \ref{eq1}-\ref{eq4} \emph{de facto} portray a standard cubic growth model with Allee effect, where the success (or failure) of a given focal trait is exclusively given by its own density. For a generic cultural trait $x$, the model predicts three equilibrium points at $x=0$ (extinction), $x=A_x$, and $x=K_x$. The equilibrium $x=A_x$ is unstable in all cases, whereas the stability of the node at $x=K_x$ is a function of the per capita growth rate $r_x$. Increasing the latter decreases the stability of fixed points~\citep{scheuring_1999}, leading to the transition from point attractors (with equilibrium at $x=K_x$), to limit cycles and chaotic dynamics with islands of stability (see fig. \ref{fig:bifurcationDiagram}). 
+When $z=0$, equations \ref{eq1}-\ref{eq4} becomes a standard cubic growth model with Allee effect, where the success (or failure) of a given focal trait is exclusively given by its own density. For a generic cultural trait $x$, the model predicts three equilibrium points at $x=0$ (extinction), $x=A_x$, and $x=K_x$. The equilibrium $x=A_x$ is unstable for all values of $r_x$, whereas the stability of the node at $x=K_x$ is a function of the per capita growth rate $r_x$. Increasing the latter decreases the stability of fixed points~\citep{scheuring_1999}, leading to the transition from point attractors (with equilibrium at $x=K_x$), to limit cycles and chaotic dynamics with islands of stability (see fig. \ref{fig:bifurcationDiagram}). 
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[width=0.5\textwidth]{./figures/figure1.jpg}
+      \includegraphics[width=1\textwidth]{./figures/figure1.jpg}
   \caption{Bifurcation diagram of a single population model with $A_x=0.2$ and $K_x=0.8$. For $0<r_x<0.6649747$, any initial value of $x$ greater than $A_x$ converges to $K_x$.}
     \label{fig:bifurcationDiagram}
 \end{figure}
 
-Here we consider only scenarios where the node $x=K_x$ is stable. In this case the initial value of $x(t=0)$ will determine the ultimate equilibria of the system: extinction, if $x(t=0)<A_x$; unstable equilibrium, if $x(t=0)=A_x$; and stable equilibrium, if $x(t=0)>A_x$. Thus in a 2-trait model, the coexistence of both variants is guaranteed only when the initial density of both traits are above their respective critical densities, otherwise we should expect that either (i.e. $a(t=0) \geq A_a$ and $b(t=0)<A_b$ or $a(t=0)<A_a$ and $b(t=0) \geq A_b$) or both (i.e. when $a(t=0)<A_a$ and $b(t=0)<A_b$) variants are ultimately extinct (see fig. \ref{fig:NoTransmissionBasin}). 
+For the rest of the paper we will consider only scenarios where the node $x=K_x$ is stable. In this case the initial value of $x(t=0)$ will determine the ultimate equilibria of the system: extinction, if $x(t=0)<A_x$; unstable equilibrium, if $x(t=0)=A_x$; and stable equilibrium, if $x(t=0)>A_x$. Thus in a 2-trait model, the coexistence of both variants is guaranteed only when the initial density of both traits are above their respective critical densities, otherwise we should expect that either (i.e. $a(t=0) \geq A_a$ and $b(t=0)<A_b$ or $a(t=0)<A_a$ and $b(t=0) \geq A_b$) or both (i.e. when $a(t=0)<A_a$ and $b(t=0)<A_b$) variants are ultimately extinct (see fig. \ref{fig:NoTransmissionBasin}). 
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[width=0.5\textwidth]{./figures/figure2.pdf}
+      \includegraphics[width=1\textwidth]{./figures/figure2.pdf}
   \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green). Solid lines represent trajectories of the system for different initial conditions, represented by dots. Model parameters: $A_a=0.2$; $K_a=0.7$; $A_b=0.5$; $K_b=1.0$; $r_a=r_b=0.05$}.
     \label{fig:NoTransmissionBasin}
 \end{figure}
