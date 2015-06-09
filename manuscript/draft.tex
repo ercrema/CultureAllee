@@ -121,6 +121,34 @@ where $z$ is a measure of reliance in social learning (effectively equivalent to
 
 \section{Results}
 
+
+%I attached the list of results that I sent you over the email that we need  to put in the text
+
+%1)With no Allee effect the strategy with the highest payoff wins  /// This is obvious we don?t need to prove this 
+%2) With carrying capacity, but no Allee effect we get possible cases of reversions. //Lake and Crema explores this, but the model has also uncertainty in the payoff signal so not sure if it is technically comparable? Should we do something with this?
+%
+%
+%** Expected pattern without transmission **
+%-3)We have our unstable nodes, stable nodes, and extinction. As long as the strategies are above their critical densities, they will survive. // DONE
+%
+%** Expected pattern with transmission **
+%4) There is a possibility for a trait to not get extinct even if its below its critical density. This happens only if: a) the alternative strategy is also below the critical density and its distance from A is further b) the alternative strategy is beyond carrying capacity. If the alternative strategy is in the positive payoff interval the focal strategy will go extinct /// This is shown with all the basin plots,  so no need to anything extra.
+%
+%5) If both traits are above their respective critical densities, we expect stable coexistence when there is no transmission, but when z>0, strategies that are closer to their critical densities have a non-zero probability to go extinct. This probability increases as the alternative population approaches its own K or A. /// This is shown by the basin plots, so its fine.
+%
+%6) As a corollary to point 5, with increasing z (but also as a function of lambda), the shared perimeter of the boundary of the basin of attractions of the two strategies increases in proximity to the both critical densities. This means that small changes in behaviour (z) or external fluctuations can promote the adoption of one or the other but not the both. // This is hard to prove I guess, and not sure if the basin plots are sufficient to state this.
+%
+%7) If both variants have initial conditions within their positive payoff density ranges, a decrease in lambda promotes the coexistence of both strategy for a given value of z. Thus with increasing ?distance? between the two strategies, its less likely that we observe the dominance of one or the other. We ought to find out why this is the case though, perhaps we need to look at individual time-series to have some clues. // We should be able to see this with the overlap analysis + possibly individual time-series to get some grips
+%
+%8) With increasing values of z, the basin of coexistence is decreased to the expense of limit cycles (can we check if it is non-chaotic using Lyapunov?) and extinction of one strategy or the other. The growth is however asymmetric (maybe), and the strategy with high A and K have will have a smaller proportion of initial conditions where it can dominate. // overlap analysis should, hopefully, still show this.
+%
+%9) If point 8 is true, we can then argue that transition to strategies with higher carrying capacity is difficult, and entails in many case stable or unstable forms of coexistence. The only exception is when the two strategies is interacting //competition analysis, with competition values and two transmission settings.
+%
+%10) or the critical densities are the same // just a single basin plot would suffice. 
+
+
+
+
 We investigate the equilibrium conditions for different initial population sizes of $a$ and $b$ and different settings of $z$, $A$, and $K$, ensuring that in all cases $K_b \geq K_a$. We assumed that two strategies differed only in their critical densities and carrying capacities but not on their intrinsic payoffs. To achieve this we set $r_b=\rho r_a$, where $\rho$ is a constant\footnote{Given two variants with the same baseline growth rate (i.e. $r_a=r_b$), equation \eqref{eq2} result into a lower $R$ for the variant with higher $A$ and $K$. In order to avoid this we increased the baseline of the strategy with lower $R$ by a factor $\rho$, given by the following equation:
 \begin{align*}
 \rho=\frac{A_bK_b(K_a-A_a)^2}{A_aK_a(A_b-K_b)^2}
@@ -150,17 +178,22 @@ For the rest of the paper we will consider only scenarios where the node $x=K_x$
 
 \subsection{Effects of social learning}
 
-When social learning is enabled (i.e. when $z>0$), the stability of the nodes are perturbed by individuals switching from one strategy to another. We identify two major changes in the equilibrium properties of the system as a result of cultural transmission. Firstly the shape of the basins of attraction are altered, and hence initial conditions closer to the boundaries between one basin and another will be strongly affected,  leading occasionally to very different evolutionary equilibria. Figure \ref{fig:TransmissionBasin} shows an example of this. When social learning is not present (fig.~\ref{fig:TransmissionBasin}a), the initial conditions $i$, $j$, and $k$ result into a stable equilibrium at $a=K_a$ and $b=K_b$, whilst the starting point $l$ leads to the extinction of $b$. When $z=0.05$ (fig.~\ref{fig:TransmissionBasin}b), the basins of attractions are modified, resulting into different trajectories and in some cases different equilibria for the same initial conditions. Thus $i$ and $k$ are no longer leading to the coexistence of both traits but to the demise of one or the other, whilst $l$ now ensures the coexistence of both variants. 
+When social learning is enabled (i.e. when $z>0$), the stability of the nodes are perturbed by individuals switching from one strategy to another. We identify two major changes in the equilibrium properties of the system as a result of cultural transmission. 
 
-% XAVI put high res figure
+First, the shape of the basins of attraction are altered, and hence initial conditions closer to the boundaries between one basin and another will be strongly affected,  leading occasionally to very different evolutionary equilibria. Figure \ref{fig:TransmissionBasin} shows an example of this. When social learning is not present (fig.~\ref{fig:TransmissionBasin}a), the initial conditions $i$, $j$, and $k$ result into a stable equilibrium at $a=K_a$ and $b=K_b$, whilst the starting point $l$ leads to the extinction of $b$. When $z=0.05$ (fig.~\ref{fig:TransmissionBasin}b), the basins of attractions are modified, resulting into different trajectories and in some cases different equilibria for the same initial conditions. Thus $i$ and $k$ are no longer leading to the coexistence of both traits but to the demise of one or the other, whilst $l$ now ensures the coexistence of both variants. 
+
 \begin{figure*}
   \centering
       \includegraphics[width=2\columnwidth]{./figures/figure3.pdf}
   \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.4$; $K_b=1.0$; $r_a=r_b=0.05$; $z=0$ (left panel) and $z=0.05$ (right panel) }
     \label{fig:TransmissionBasin}
 \end{figure*}
+%Is it possible to change this figure to the settings for lambda=0.75 in figure5.pdf, setting as z 0 and 0.2? This way we get a much stronger changes in the basin of attraction, and we could also mention here point 6 above?
 
-When the magnitude of social learning is sufficiently high, the system is subject to effects similar to an increase in the per capita growth rate $r$, with the consequent decrease in the stability of the fixed points. Figure XXXX1 shows how an increase in $z$ generate time-series with shifts from one variant to the other. This regime is prone to occur when both variants are initialised with high densities (XXXX2/basin)/. In these conditions the total density is too high to ensure a stable coexistence, and the regulatory effect of negative fitness is avoided by the fast rates of cultural transmission (i.e. individual shift strategy before experiencing a population decline resulting from density being over $K$). Figure XXX2 also implies that high reliance on social learning leeds to the emergence of a new basin of attraction for these unstably cycles, with small differences in initial conditions leading again to profoundly different dynamics. 
+
+Second, when the magnitude of social learning is high, the system is subject to effects similar to those observed with an increase in the per capita growth rate $r$ (cf. fig. \ref{fig:bifurcationDiagram}), that is a decrease in the stability of the fixed points. Figure XXXX shows an example where the increase in $z$ generates a transition from stable coexistence to cyclical fluctuations. %We need to make this figure as time-series, or actually use the bifurcation diagram.  
+This regime is prone to occur when both variants are initialised with high densities. %This refers to the basin plot figureUnstable1.pdf that you've already made. Given the description below, do you think that those tiny "islands" of orange inside the green are actually specific values that are covered by the fluctuations in the time-series? Given that the system is deterministic, it wouldn't be a surprise, if anything there MUST be a combination of values for these... 
+In these conditions the total density is too high to ensure a stable coexistence, and the regulatory effect of negative fitness is minimised by the fast rates of cultural transmission (i.e. individual shift strategy before experiencing a population decline resulting from density being over $K$). Figure XXX2 also implies that high reliance on social learning leeds to the emergence of a new basin of attraction for these unstably cycles, with small differences in initial conditions leading again to profoundly different dynamics. 
 
 
 %\begin{figure}
@@ -178,10 +211,8 @@ When the magnitude of social learning is sufficiently high, the system is subjec
 %\end{figure}
 
 \subsection{Differences in critical density and carrying capacities}
-% XAVI better title?
 
-The analyses of the previous section suggest that maximum proportion of population that can switch strategies (i.e. the $z$ parameter) has major effects on the final equilibria (c.f. fig.\ref{fig:bifurcationWithTransmission}). However, this will also depend on the key parameters defining the range of positive payoff for the two strategies (i.e. $[A_a,K_a]$ and $[A_b,K_b]$). While a comprehensive analysis is not possible, here we illustrate the relationship between these parameters and $z$ by introducing a new parameter $\lambda \in (0,1)$ adding the following constraints to equation \eqref{eq1}: 
-%I slightly revised your intro here. Mainly because this reads as if changes depends on the intervals of positive payoff alone, while I think it actually depends on any possibly combination of values. 
+The analyses of the previous section suggest that maximum proportion of population that can switch strategies (i.e. the $z$ parameter) has major effects on the final equilibria (c.f. fig. XXX?). However, this will also depend on the key parameters defining the range of positive payoff for the two strategies (i.e. $[A_a,K_a]$ and $[A_b,K_b]$). While a comprehensive analysis is not possible, here we illustrate the relationship between these parameters and $z$ by introducing a new parameter $\lambda \in (0,1)$ adding the following constraints to equation \eqref{eq1}: 
 
 \begin{equation}
 \begin{aligned}
@@ -191,15 +222,8 @@ K_b = K_a + (1-\lambda)(K_a-A_a)
 \end{aligned}
 \end{equation}
 
-The dynamics of two strategies are similar for low values of $\lambda$. High values indicate that the minimum number of individuals needed to achieve positive fitness in $b$ gets closer to $K_a$, while the population size that $b$ can sustain also grows. 
-
-As a consequence, the number of individuals switching strategies when $b$ has lower payoff is also higher and could potentially overload $a$ due to its lower $K_a$.
-
-Figure \ref{fig:overlap} shows how the degree of overlap affects the equilibria of our model with and without social learning. The relation between the two processes strongly affects the extent of the different basins in a non-dynamic fashion.
-%I've put "extent" instead of "shape" as we are not directly assessing the latter. Also I would omit "strongly".
-
-
-% XAVI put high res figure, and update left, middle, right order
+Equation \eqref{eqOverlap} ensures that the difference between carrying capacity and critical density is hold constant and equal between the two variants, so that $\lambda$ can be interpreted as an inverse  measure of overlap. Indeed when $\lambda=1$ the two variants are identical, and when $\lambda=0$, the critical density of one strategy becomes equal to the carrying capacity of the other (i.e. $A_b=K_a$). Figure \ref{fig:overlap} examines three different settings of $\lambda$  with low ($z=0.05$) and intermediate ($z=0.2$) degree of reliance on social learning. The plot suggests that, higher values of $z$ limits the number of initial conditions within the positive payoff zone (i.e. when the initial conditions for $a$ and $b$ are within the intervals $[A_a,K_a]$ and $[A_b,K_b]$) where a stable co-existence is achieved, but the magnitude of this effect is smaller for lower values of $\lambda$ (i.e. smaller overlap). We can further investigate this point by computing the relative areas of different basins of attraction within the positive payoff ozone for different parameter combinations of $z$ and $\lambda$. The results (fig. \ref{fig:percentages}) confirms that indeed with high overlap and high rates of social learning conditions enabling the stable coexistence is reduced, initially as an increase of conditions promoting the dominance of one variant or another, and eventually as the unstable fluctuations regime take over. With decreasing $\lambda$ unstable regimes vanish, and the relationship between $z$ and the size of the basin of attraction for stable coexistence becomes more or less constant for each value of $\lambda$. 
+% I think we should use different parameter combinations for this second plot. Basically we have lambda=0.95 and lambda=0.9 being identical, and lambda=0.6~0.5 also identical. Ideally we should also think about slightly more refined interval for z as well?
 
 \begin{figure*}
   \centering
@@ -207,8 +231,6 @@ Figure \ref{fig:overlap} shows how the degree of overlap affects the equilibria 
   \caption{Basins of attraction for $z=0.05$ (top) and $z=0.2$ (bottom); $\lambda=1$ (left), $\lambda=0.75$ (middle) and $\lambda=0.5$}
     \label{fig:overlap}
 \end{figure*}
-
-Figure \ref{fig:percentages} explores in deeper detail the effects of both parameters ($z$ and $lambda$) on the basin of each equilibria. An increase in $z$ decreases the possibility of having coexistence for high similarity between strategies $a$ and $b$ (i.e. $\lambda \geq 0.9$. From $0.9 < \lambda < 0.55$ the dynamics remain remarkably similar, while for $\lambda = 0.5$ the effects of social learning decreases because of the large gap between $A$ and $K$ of both strategies.
 
 \begin{figure*}
   \centering
@@ -222,6 +244,7 @@ Figure \ref{fig:percentages} explores in deeper detail the effects of both param
 
 \subsection{Effect of competition}
 
+%This section needs to be revised:
 Figure \ref{fig:percentages} also suggest that with decreasing values of $\lambda$, the variant with lower carrying capacity/critical density expands its basin of attraction. This implies that, with other things being equal, traits with higher $A$ and $K$ have a smaller number of favourable conditions that can promote its existence. Indeed in the case of the two-variants model examined here, the strategy with higher $A$ and $K$ can survive primarily when its initial density is comparatively high (e.g. above or equal its maximum payoff) and when the alternative strategy is close to its carrying capacity. The latter condition implies that novel strategies with higher carrying capacity but also higher critical densities are fully adopted only when the extant strategy with lower $A$ and $K$ has a density closer to its upper threshold. Thus innovations capable to sustain larger population density requires either a comparatively lower critical density that ensures a higher overlap with extant strategies, or an initial number of adoptees that are not guided by a payoff-based transmission. A third option, which we briefly explore here, is to relax the assumption that the payoff of each variant is exclusively a function of their intrinsic density. For instance several subsistence strategies do not have fully independent resource pools, and hence the success of a given variant might be detrimental to the payoff of the other irregardless of the effects provoked by cultural transmission. We can revise our core model by including new terms portraying the competition effect between the two resources:  
 
 \begin{equation}
@@ -233,6 +256,9 @@ R_{b,t}& = r_b (\frac{b_t-c_{A_b}a_t}{A_b}-1)(1-\frac{b_t-c_{K_b}a_t}{K_b})
 \end{equation}
 
 where the four new parameters $c_{A_a}$, $c_{A_b}$, $c_{K_a}$ and $c_{K_b}$, measure respectively the negative (or positive) effect determined by the number of individuals of the “other” traits. When $c_{A}>0$ the Allee threshold is essentially increased, while when $c_{K}>0$ the carrying capacity is diminished as function of the other population. Larger values of any of the $c$ parameters dictates a stronger influence of the other population. 
+
+%We need to mention that analytical equilibrium solution and put the equations here. Then discuss about the effects for different values of z. 
+
 
 
 %what if competition
