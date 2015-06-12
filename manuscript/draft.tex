@@ -184,12 +184,10 @@ First, the shape of the basins of attraction are altered, and hence initial cond
 
 \begin{figure*}
   \centering
-      \includegraphics[width=2\columnwidth]{./figures/figure3.pdf}
-  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.4$; $K_b=1.0$; $r_a=r_b=0.05$; $z=0$ (left panel) and $z=0.05$ (right panel) }
+      \includegraphics[width=\columnwidth]{./figures/figure3.pdf}
+  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.35$; $K_b=0.95$; $r_a=0.05$; $z=0$ (left panel) and $z=0.2$ (right panel) }
     \label{fig:TransmissionBasin}
 \end{figure*}
-%Is it possible to change this figure to the settings for lambda=0.75 in figure5.pdf, setting as z 0 and 0.2? This way we get a much stronger changes in the basin of attraction, and we could also mention here point 6 above?
-
 
 Second, when the magnitude of social learning is high, the system is subject to effects similar to those observed with an increase in the per capita growth rate $r$ (cf. fig. \ref{fig:bifurcationDiagram}), that is a decrease in the stability of the fixed points. Figure XXXX shows an example where the increase in $z$ generates a transition from stable coexistence to cyclical fluctuations. %We need to make this figure as time-series, or actually use the bifurcation diagram.  
 This regime is prone to occur when both variants are initialised with high densities. %This refers to the basin plot figureUnstable1.pdf that you've already made. Given the description below, do you think that those tiny "islands" of orange inside the green are actually specific values that are covered by the fluctuations in the time-series? Given that the system is deterministic, it wouldn't be a surprise, if anything there MUST be a combination of values for these... 
@@ -223,7 +221,6 @@ K_b = K_a + (1-\lambda)(K_a-A_a)
 \end{equation}
 
 Equation \eqref{eqOverlap} ensures that the difference between carrying capacity and critical density is hold constant and equal between the two variants, so that $\lambda$ can be interpreted as an inverse  measure of overlap. Indeed when $\lambda=1$ the two variants are identical, and when $\lambda=0$, the critical density of one strategy becomes equal to the carrying capacity of the other (i.e. $A_b=K_a$). Figure \ref{fig:overlap} examines three different settings of $\lambda$  with low ($z=0.05$) and intermediate ($z=0.2$) degree of reliance on social learning. The plot suggests that, higher values of $z$ limits the number of initial conditions within the positive payoff zone (i.e. when the initial conditions for $a$ and $b$ are within the intervals $[A_a,K_a]$ and $[A_b,K_b]$) where a stable co-existence is achieved, but the magnitude of this effect is smaller for lower values of $\lambda$ (i.e. smaller overlap). We can further investigate this point by computing the relative areas of different basins of attraction within the positive payoff ozone for different parameter combinations of $z$ and $\lambda$. The results (fig. \ref{fig:percentages}) confirms that indeed with high overlap and high rates of social learning conditions enabling the stable coexistence is reduced, initially as an increase of conditions promoting the dominance of one variant or another, and eventually as the unstable fluctuations regime take over. With decreasing $\lambda$ unstable regimes vanish, and the relationship between $z$ and the size of the basin of attraction for stable coexistence becomes more or less constant for each value of $\lambda$. 
-% I think we should use different parameter combinations for this second plot. Basically we have lambda=0.95 and lambda=0.9 being identical, and lambda=0.6~0.5 also identical. Ideally we should also think about slightly more refined interval for z as well?
 
 \begin{figure*}
   \centering
@@ -235,12 +232,9 @@ Equation \eqref{eqOverlap} ensures that the difference between carrying capacity
 \begin{figure*}
   \centering
       \includegraphics[width=\textwidth]{./figures/figure6}
-  \caption{Proportion of initial conditions falling in each basin of attraction for different values of $\lambda$. X axis controls the parameter $z$ defining social learning.} %We need to add what is the range of initial conditions being explored and what are the initial values of A_a and K_a
+  \caption{Proportion of initial conditions falling in each basin of attraction for different values of $\lambda$. X axis controls the parameter $z$ defining social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $r_a=0.05$}
     \label{fig:percentages}
 \end{figure*}
-
-
-
 
 \subsection{Effect of competition}
 

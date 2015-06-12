@@ -28,7 +28,6 @@ getRawValues <- function(run)
     print(sprintf('total: %02d - should be: %02d',total, nrow(result)))
 
     resultdf <- data.frame(eq='coexistence', value=nrow(coexistence))
-    resultdf <- rbind(resultdf, data.frame(eq='extinction', value=nrow(extinction)))
     resultdf <- rbind(resultdf, data.frame(eq='a Extinct', value=nrow(mExtinct)))
     resultdf <- rbind(resultdf, data.frame(eq='b Extinct', value=nrow(nExtinct)))
     resultdf <- rbind(resultdf, data.frame(eq='unstable', value=(nrow(result)-total)))
@@ -48,19 +47,18 @@ getPercentages<- function(raw)
 }
 
 raw <- data.frame()
-for(run in 0:77)
+for(run in 0:153)
 {
     raw <- rbind(raw, getRawValues(run))
 }
 
 percentages <- getPercentages(raw)
-percentages <- subset(percentages, lambda<=1.0)    
-colorValues = c('#006400','#D3D3D3','#4169E1','#CD5C5C','gold2')
+colorValues = c('#006400','#4169E1','#CD5C5C','gold2')
 
 #ggplot(percentages, aes(x=z, y=value, fill=eq)) + geom_area(stat='identity') + scale_fill_manual(name='Equilibria', values=colorValues)+ facet_wrap(~lambda)
 
-plotted <- subset(percentages, lambda >=0.9 | lambda<=0.6 )
-plotted$lambda <- factor(plotted$lambda, levels=c(1,0.95,0.9,0.6,0.55,0.5))    
+plotted <- subset(percentages, lambda >=0.85 | lambda==0.5 | lambda==0.35 )
+plotted$lambda <- factor(plotted$lambda, levels=c(1,0.95,0.9,0.85,0.5,0.35))    
 
 # coexistence: #006400
 # extinct: #D3D3D3

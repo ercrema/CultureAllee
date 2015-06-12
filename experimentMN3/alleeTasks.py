@@ -9,21 +9,24 @@ def main():
     zValues = [0.05, 0.2]
     lambdaValues = [0.5, 0.75, 1]
     """
-    """
+    
     # 2 - exploration lambda/z (relative figure)
     competitionValues = [0.0]
-    zValues = arange(0,1.1,0.1)
-    lambdaValues = arange(0.5,1.05,0.05)
+    zValues = arange(0,0.55,0.05)
+    lambdaValues = arange(0.35,1.05,0.05)
+    
     """
     # 3 - exploration competition/z 
     competitionValues = [0.1,0.25,0.5]
     zValues = [0.05, 0.2]
     lambdaValues = [0.75]
     """
+
+    """
     # 4 - z (figure 3)
     competitionValues = [0.0]
-    zValues = [0,0.05]
-    lambdaValues = [2/3]
+    zValues = [0,0.2]
+    lambdaValues = [0.75]
     """
 
     tasksFile = open('allee.tasks', 'w')
