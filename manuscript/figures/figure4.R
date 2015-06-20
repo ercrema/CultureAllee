@@ -22,7 +22,7 @@ y.lim=c(0,1.2)
 
 bifurcationPlotSingle<-function(Zseq=seq(0,0.7,0.005),timeSteps=10000,...)
 {
-    plot(x=1,y=1,xlim=c(min(Zseq),max(Zseq)),type="n",ylab="a",xlab="z",ylim=c(0,1.2))
+    plot(x=1,y=1,xlim=c(min(Zseq),max(Zseq)),type="n",ylab="a",xlab="z",ylim=c(0.1,1.1))
     for (z in Zseq)
         {
             tmp=unique(allee(timeSteps=timeSteps,storeFinalOnly=FALSE,z=z,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm)[[1]][(timeSteps-500):timeSteps])
@@ -30,8 +30,11 @@ bifurcationPlotSingle<-function(Zseq=seq(0,0.7,0.005),timeSteps=10000,...)
                }
         }
 
-bifurcationPlotSingle(Zseq=seq(0,0.7,0.005),timeSteps=10000,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm)
-bifurcationPlotSingle(Zseq=seq(0,0.7,0.005),timeSteps=10000,ini.m=0.7,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm)
+bifurcationPlotSingle(Zseq=seq(0.4,0.82,0.001),timeSteps=10000,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm)
+
+
+
+
 
 
 
