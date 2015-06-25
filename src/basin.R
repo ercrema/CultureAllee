@@ -90,14 +90,16 @@ trajPlot<-function(ini.m=1001,ini.n=1001,...)
         points(x=ini.m,y=ini.n,pch=20)
     }
 
-basePlot<-function(...)
+basePlot<-function(leg=TRUE,ymax=NA,...)
     {
         tmp=allee(...)
-        plot(tmp$m,type="l",ylim=c(0,max(unlist(tmp))),col="indianred",lwd=2,ylab="Population Size",xlab="Time")
-        axis(side=4,at=c(Km,Kn),labels=c(expression(K[m]),expression(K[n])),hadj=0.5,las=2)
+        if(is.na(ymax)){ymax=max(unlist(tmp))}
+        plot(tmp$m,type="l",ylim=c(0,ymax),col="indianred",lwd=2,ylab="Population Size",xlab="Time")
+        axis(side=4,at=c(Km,Kn),labels=c(expression(K[a]),expression(K[b])),hadj=0.5,las=2)
         abline(h=c(Km,Kn),lty=2)
         lines(tmp$n,col="royalblue",lwd=2)
-        legend("bottomright",legend=c("m","n"),lty=1,lwd=2,col=c("indianred","royalblue"))
+        if(leg==TRUE)
+        {legend("bottomright",legend=c("a","b"),lty=1,lwd=2,col=c("indianred","royalblue"))}
     }
 
 
