@@ -20,48 +20,30 @@ y.lim=c(0,1.2)
 
 
 
-bifurcationPlotSingle<-function(Zseq=seq(0,0.7,0.005),timeSteps=10000,...)
+bifurcationPlotSingle<-function(Zseq=seq(0,0.7,0.005),timeSteps=10000,cexSetting=6,...)
 {
-    plot(x=1,y=1,xlim=c(min(Zseq),max(Zseq)),type="n",ylab="a",xlab="z",ylim=c(0.1,1.1))
+    plot(x=1,y=1,xlim=c(min(Zseq),max(Zseq)),type="n",ylab="",xlab="",ylim=c(0.1,1.1),cex.axis=cexSetting,cex.lab=cexSetting)
     for (z in Zseq)
         {
             tmp=unique(allee(timeSteps=timeSteps,storeFinalOnly=FALSE,z=z,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm)[[1]][(timeSteps-500):timeSteps])
             points(x=rep(z,length(tmp)),y=tmp,pch=20,cex=0.5)
-               }
+        }
+mtext(side=1,"z",line=6,cex=6)
+mtext(side=2,"a",line=6,cex=6)
         }
 
+par(mar=c(5, 6, 4, 2) + 2)
 bifurcationPlotSingle(Zseq=seq(0.4,0.82,0.001),timeSteps=10000,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm)
 
 
-
-
-
-
-
-
-cexSetting=10
-bifurcationPlotDouble<-function(Zseq=seq(0,0.7,0.005),timeSteps=10000,cexSetting,...)
-{
-    plot(x=1,y=1,xlim=c(min(Zseq),max(Zseq)),type="n",ylab="",xlab="z",ylim=c(0,1.2),cex.axis=cexSetting,cex.lab=cexSetting)
-    for (z in Zseq)
-        {
-            tmp=allee(timeSteps=timeSteps,storeFinalOnly=FALSE,z=z,...)
-            tmp1=unique(tmp[[1]][(timeSteps-500):timeSteps])
-            tmp2=unique(tmp[[2]][(timeSteps-500):timeSteps])
-            points(x=rep(z,length(tmp1)),y=tmp1,pch=20,cex=1,col=rgb(1,0,0,0.3))
-            points(x=rep(z,length(tmp2)),y=tmp2,pch=20,cex=1,col=rgb(0,0,1,0.3))
-        }
-}
+dev.print(device=jpeg,"~/github/CultureAllee/manuscript/figures/figure4.jpg",width=4000,height=3000,pointsize = 30)
 
 par(mfrow=c(1,3))
-bifurcationPlotDouble(Zseq=seq(0,0.7,0.0025),timeSteps=10000,ini.m=0.11,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,cexSetting=cexSetting)
-title("a",cex.main=cexSetting)
-bifurcationPlotDouble(Zseq=seq(0,0.7,0.0025),timeSteps=10000,ini.m=0.5,ini.n=0.21,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,cexSetting=cexSetting)
-title("b",cex.main=cexSetting)
-bifurcationPlotDouble(Zseq=seq(0,0.7,0.0025),timeSteps=10000,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,cexSetting=cexSetting)
-title("c",cex.main=cexSetting)
-
-dev.print(device=jpeg,"~/github/CultureAllee/manuscript/figures/figure4.jpg",width=5400,height=1800,pointsize = 50)
-
-
+basePlot(timeSteps=200,storeFinalOnly=FALSE,z=0,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,leg=TRUE,ymax=0.9)
+title("z=0")
+basePlot(timeSteps=200,storeFinalOnly=FALSE,z=0.3,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,leg=FALSE,ymax=0.9)
+title("z=0.3")
+basePlot(timeSteps=200,storeFinalOnly=FALSE,z=0.6,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,leg=FALSE,ymax=0.9)
+title("z=0.6")
+dev.print(device=pdf,"~/github/CultureAllee/manuscript/figures/figure4b.pdf")
 
