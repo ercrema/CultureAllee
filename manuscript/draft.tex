@@ -115,7 +115,7 @@ z\frac{|R_{a,t}-R{b,t}|}{m\Delta}& \text{if }|R_{a,t}-R_{b,t}| \leq m\Delta\\
 \end{aligned}
 \end{equation}
 
-where $z$ is a measure of reliance in social learning (effectively equivalent to highest possible transmission rate), $\Delta$ is the maximum between $R_{max(a,t)}$ and $R_{max(b,t)}$, and $m$ is a calibration parameter that measures the perception of the difference in the payoffs (i.e. small values of $m$ determines a higher rate by which the theoretical maximum transmission rate is reached), thus portraying potential acquisition costs of the new variant.
+where $z$ is a measure of reliance in social learning (effectively equivalent to highest possible transmission rate), $\Delta$ is the maximum between $R_{max(a,t)}$ and $R_{max(b,t)}$, and $m$ is a calibration parameter that measures the perception of the difference in the payoffs (i.e. small values of $m$ determines a higher rate by which the theoretical maximum transmission rate is reached), thus portraying potential acquisition costs of the new variant~\citep{henrich2001cultural}.
 
 \section{Results}
 
@@ -155,43 +155,23 @@ First, the basins of attraction are transformed, and hence the system equilibriu
 \begin{figure*}
   \centering
       \includegraphics[width=\columnwidth]{./figures/figure3.pdf}
-  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.35$; $K_b=0.95$; $r_a=0.05$;$r_b=0.1039063$; $z=0$ (left panel) and $z=0.2$ (right panel) } 
+  \caption{Basins of attraction for the four equilibria (mutual extinction: grey; extinction of $a$: blue; extinction of $b$: red; stable coexistence: green) with (right) and without (left) social learning. Model parameters: $A_a=0.2$; $K_a=0.8$; $A_b=0.35$; $K_b=0.95$; $r_a=0.05$; $r_b=0.1039063$; $z=0$ (left panel) and $z=0.2$ (right panel) } 
     \label{fig:TransmissionBasin}
 \end{figure*}
 
 
-Second, when the magnitude of social learning is high, the system is subject to effects similar to those observed with an increase in the per capita growth rate $r$ (cf. fig. \ref{fig:bifurcationDiagram}), that is a decrease in the stability of the fixed points. Figure \ref{fig:BifurcationSocialLearning} shows the bifurcation diagram for the population size of $a$ as a function of $z$. Here the initial effects of $z$ do not alter the equilibrium point ($K_a=0.6$), but once $z>0.5$ we observe a sudden transition to unstable fluctuations, with an increasing range of different values for $a$. %We can keep more or less the same description showing instead \ref{fig:TSsocialLearning}
-
-% TODO XRC I thought we were removing this figure
-The basin plot (fig.\ref{fig:basinunstable}) suggests that this regime is prone to occur when both variants are initialised with high densities in respect to their critical densities. In these conditions the total density is too high to ensure a stable coexistence, and the regulatory effect of negative fitness is minimised by the fast rates of cultural transmission (i.e. individual shift strategy before experiencing a population decline resulting from density being over $K$). 
-
-
-% TODO XRC choose figure4 or figure4b
-\begin{figure}
-  \centering
-      \includegraphics[width=0.5\textwidth]{./figures/figure4.jpg}
-  \caption{}
-    \label{fig:BifurcationSocialLearning}
-\end{figure}
+Second, when the magnitude of social learning is high, the system is subject to effects similar to those observed with an increase in the per capita growth rate $r$ (cf. fig. \ref{fig:bifurcationDiagram}), that is a decrease in the stability of the fixed points. Figure \ref{fig:TSsocialLearning} shows fluctuations in population size of the system over time for different values of $z$. Here low values of $z$ do not change the equilibrium point at ($a=K_a$ and $b=K_b$). However, at $z \geq 0.6$ unstable dynamics can be observed leading the system towards limit cycles. In this configuration the regulatory effect of negative fitness is minimised by the fast rates of cultural transmission (i.e. individual shift strategy before experiencing a population decline resulting from density being over $K$). 
 
 \begin{figure}
   \centering
-      \includegraphics[width=0.5\textwidth]{./figures/figure4b.pdf}
-  \caption{}
+      \includegraphics[width=1\textwidth]{./figures/figure4b.pdf}
+  \caption{Time series of population size for $z=0$ (left), $z=0.3$ (center) and $z=0.6$ (right). Increasing values of $z$ shift the system from the co-existence equilibrium towards a limit cycle with abrupt population changes. Model parameters: $A_a=0.1$; $A_b=0.2$; $K_a=0.6$; $K_b=0.7$; $r_a=0.05$}
     \label{fig:TSsocialLearning}
-\end{figure}
-
-\begin{figure}
-  \centering
-      \includegraphics[width=0.5\textwidth]{./figures/figureUnstable1.pdf}
-  \caption{}
-    \label{fig:basinunstable}
 \end{figure}
 
 \subsection{Differences in critical density and carrying capacities}
 
-The analyses of the previous section suggest that maximum proportion of population that can switch strategies (i.e. the $z$ parameter) has major effects on the final equilibria (c.f. fig. \ref{fig:BifurcationSocialLearning}). %or any of the three figure above. 
-However, this will also depend on the key parameters defining the range of positive payoff for the two strategies (i.e. $[A_a,K_a]$ and $[A_b,K_b]$). While a comprehensive analysis is not possible, here we illustrate the relationship between these parameters and $z$ by introducing a new parameter $\lambda \in (0,1)$ adding the following constraints to equation \eqref{eq1}: 
+The analyses of the previous section suggest that maximum proportion of population that can switch strategies (i.e. the $z$ parameter) has major effects on the final equilibria (c.f. fig. \ref{fig:TransmissionBasin}). However, this will also depend on the key parameters defining the range of positive payoff for the two strategies (i.e. $[A_a,K_a]$ and $[A_b,K_b]$). While a comprehensive analysis is not possible, here we illustrate the relationship between these parameters and $z$ by introducing a new parameter $\lambda \in (0,1)$ adding the following constraints to equation \eqref{eq1}: 
 
 \begin{equation}
 \begin{aligned}
