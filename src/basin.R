@@ -94,12 +94,12 @@ basePlot<-function(leg=TRUE,ymax=NA,...)
     {
         tmp=allee(...)
         if(is.na(ymax)){ymax=max(unlist(tmp))}
-        plot(tmp$m,type="l",ylim=c(0,ymax),col="indianred",lwd=2,ylab="Population Size",xlab="Time")
-        axis(side=4,at=c(Km,Kn),labels=c(expression(K[a]),expression(K[b])),hadj=0.5,las=2)
+        plot(tmp$m,type="l",ylim=c(0,ymax),col="indianred",lwd=2,ylab="Population Size",xlab="Time", cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
+        axis(side=4,at=c(Km,Kn),labels=c(expression(K[a]),expression(K[b])),hadj=0.5,las=2, cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5)
         abline(h=c(Km,Kn),lty=2)
         lines(tmp$n,col="royalblue",lwd=2)
         if(leg==TRUE)
-        {legend("bottomright",legend=c("a","b"),lty=1,lwd=2,col=c("indianred","royalblue"))}
+        {legend("bottomright",legend=c("a","b"),lty=1,lwd=2,col=c("indianred","royalblue"), cex=1.5)}
     }
 
 

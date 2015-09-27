@@ -1,6 +1,6 @@
-source("./src/alleeIGC.R")
-source("./src/basin.R")
-source("./src/utility.R")
+source("../../src/alleeIGC.R")
+source("../../src/basin.R")
+source("../../src/utility.R")
 
 
 lambda=0.1
@@ -45,5 +45,5 @@ basePlot(timeSteps=200,storeFinalOnly=FALSE,z=0.3,ini.m=0.4,ini.n=0.4,r.n=r.n,r.
 title("z=0.3")
 basePlot(timeSteps=200,storeFinalOnly=FALSE,z=0.6,ini.m=0.4,ini.n=0.4,r.n=r.n,r.m=r.m,Kn=Kn,Km=Km,An=An,Am=Am,cAn=cAn,cAm=cAm,cKn=cKn,cKm=cKm,leg=FALSE,ymax=0.9)
 title("z=0.6")
-dev.print(device=pdf,"~/github/CultureAllee/manuscript/figures/figure4b.pdf")
+dev.print(device=pdf,"figure4b.pdf")
 
