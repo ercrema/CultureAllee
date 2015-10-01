@@ -5,9 +5,8 @@
 \usepackage{xcolor}
 \usepackage{amsmath}
 
-\newcommand{\memo}[2]{\textcolor{#1}{#2}}
-\newcommand{\xavi}[1]{\memo{orange}{xavi: #1\\}}
-\newcommand{\enrico}[1]{\memo{blue}{enrico: #1\\}}
+\usepackage{lineno}
+    \linenumbers
 
 \journal{Theoretical Population Biology}
 
@@ -164,7 +163,7 @@ Second, when the magnitude of social learning is high, the system is subject to 
 \begin{figure}
   \centering
       \includegraphics[width=1\textwidth]{./figures/figure4b.pdf}
-  \caption{Time series of population size for $z=0$ (left), $z=0.3$ (center) and $z=0.6$ (right). Increasing values of $z$ shift the system from the co-existence equilibrium towards a limit cycle with abrupt population changes. Model parameters: $A_a=0.1$; $A_b=0.2$; $K_a=0.6$; $K_b=0.7$; $r_a=0.05$}
+  \caption{Time series of population size for $z=0$ (left), $z=0.3$ (center) and $z=0.6$ (right). Increasing values of $z$ shift the system from the co-existence equilibrium towards a limit cycle with abrupt population changes. Model parameters: $A_a=0.1$; $A_b=0.2$; $K_a=0.6$; $K_b=0.7$; $r_a=r_b=0.05$}
     \label{fig:TSsocialLearning}
 \end{figure}
 
